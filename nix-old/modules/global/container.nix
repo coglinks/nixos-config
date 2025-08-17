@@ -1,21 +1,6 @@
 { nix-flatpak, lib, pkgs-stable, ... }:
 
 {
-  virtualisation.docker = {
-    enable = false;
-    daemon.settings = {
-      data-root = "home/incogshift/dockerData-root";
-    };
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
-
-  environment.systemPackages = [
-    pkgs-stable.lazydocker
-  ];
-
   programs = {
     adb.enable = true;
     virt-manager = {

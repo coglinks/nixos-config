@@ -2,10 +2,13 @@
 {
   imports = [
     ./bootloader.nix
+    ./display-manager.nix
+    ./docker.nix
     ./hardware.nix
     ./xserver.nix
     ./network.nix
     ./nh.nix
+    ./nix.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix

@@ -1,9 +1,20 @@
-{ ... }:
+{ config, ... }:
 let
-  browser = "zen-beta";
-  terminal = "ghostty";
+  browser = "firefox";
+  terminal = "kitty";
+  screenLock = "hyprlock";
 in
 {
+  xdg.configFile = {
+    "hypr/scripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./scripts;
+      recursive = true;
+    };
+    "hypr/UserScripts" = {
+      source = config.lib.file.mkOutOfStoreSymlink ./UserScripts;
+      recursive = true;
+    };
+  };
   wayland.windowManager.hyprland = {
     settings = {
       # autostart
@@ -21,19 +32,15 @@ in
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
 
-        "hyprlock"
-
-        "${terminal} --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false"
-        "[workspace 1 silent] ${browser}"
-        "[workspace 2 silent] ${terminal}"
+        "hypridle &"
       ];
 
       input = {
-        kb_layout = "us,fr";
+        kb_layout = "us,ara";
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
-        follow_mouse = 0;
+        follow_mouse = 1;
         float_switch_override_focus = 0;
         mouse_refocus = 0;
         sensitivity = 0;
@@ -44,9 +51,11 @@ in
 
       general = {
         "$mainMod" = "SUPER";
+        "$scripts" = "~/.config/hypr/scripts";
+        "$UserScripts" = "~/.config/hypr/UserScripts";
         layout = "dwindle";
-        gaps_in = 6;
-        gaps_out = 12;
+        gaps_in = 0;
+        gaps_out = 0;
         border_size = 2;
         "col.active_border" = "rgb(98971A) rgb(CC241D) 45deg";
         "col.inactive_border" = "0x00000000";
@@ -87,7 +96,7 @@ in
         # fullscreen_opacity = 1.0;
 
         blur = {
-          enabled = true;
+          enabled = false;
           size = 3;
           passes = 2;
           brightness = 1;
@@ -99,7 +108,7 @@ in
         };
 
         shadow = {
-          enabled = true;
+          enabled = false;
 
           ignore_window = true;
           offset = "0 2";
@@ -110,7 +119,7 @@ in
       };
 
       animations = {
-        enabled = true;
+        enabled = false;
 
         bezier = [
           "fluent_decel, 0, 0.2, 0.4, 1"
@@ -148,7 +157,7 @@ in
         "$mainMod, F1, exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, ${terminal} --gtk-single-instance=true"
+        "$mainMod, Return, exec, ${terminal}"
         "ALT, Return, exec, [float; size 1111 700] ${terminal}"
         "$mainMod SHIFT, Return, exec, [fullscreen] ${terminal}"
         "$mainMod, B, exec, [workspace 1 silent] ${browser}"
@@ -157,11 +166,9 @@ in
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, Space, exec, toggle-float"
         "$mainMod, D, exec, rofi -show drun || pkill rofi"
-        "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, swaylock"
-        "ALT, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
+        "$mainMod, Escape, exec, ${screenLock}"
+        "$mainMod, Z, exec, $scripts/Wlogout.sh"
         "$mainMod, P, pseudo,"
         "$mainMod, X, togglesplit,"
         "$mainMod, T, exec, toggle-oppacity"
@@ -177,9 +184,9 @@ in
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
-        ",Print, exec, screenshot --copy"
-        "$mainMod, Print, exec, screenshot --save"
-        "$mainMod SHIFT, Print, exec, screenshot --swappy"
+        "SUPER SHIFT, S, exec, screenshot --copy"
+        ", Print, exec, gradia --screenshot=INTERACTIVE"  # screenshot area
+        "SHIFT, Print, exec, gradia --screenshot=FULL" # screenshot full desktop
 
         # switch focus
         "$mainMod, left,  movefocus, l"
@@ -214,6 +221,10 @@ in
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
+        "$mainMod, mouse_down, workspace, e-1"
+        "$mainMod, mouse_up, workspace, e+1"
+        "$mainMod, comma, workspace, e-1"
+        "$mainMod, period, workspace, e+1"
 
         # same as above, but switch to the workspace
         "$mainMod SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
@@ -257,33 +268,30 @@ in
         "$mainMod ALT, l, moveactive, 80 0"
 
         # media and volume controls
-        # ",XF86AudioMute,exec, pamixer -t"
+        ",XF86AudioMute,exec, pamixer -t"
         ",XF86AudioPlay,exec, playerctl play-pause"
         ",XF86AudioNext,exec, playerctl next"
         ",XF86AudioPrev,exec, playerctl previous"
         ",XF86AudioStop,exec, playerctl stop"
 
-        "$mainMod, mouse_down, workspace, e-1"
-        "$mainMod, mouse_up, workspace, e+1"
-
         # clipboard manager
         "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
       ];
 
-      # # binds active in lockscreen
-      # bindl = [
-      #   # laptop brigthness
-      #   ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-      #   ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
-      #   "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
-      #   "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
-      # ];
+      binde = [
+        ",XF86AudioRaiseVolume,exec, pamixer -i 2"
+        ",XF86AudioLowerVolume,exec, pamixer -d 2"
+      ];
 
-      # # binds that repeat when held
-      # binde = [
-      #   ",XF86AudioRaiseVolume,exec, pamixer -i 2"
-      #   ",XF86AudioLowerVolume,exec, pamixer -d 2"
-      # ];
+      # laptop brigthness
+      bindel = [
+        ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ];
+      bindl = [
+        "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
+        "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
+      ];
 
       # mouse binding
       bindm = [
@@ -318,15 +326,11 @@ in
         "opacity 1.0 override 1.0 override, class:(Unity)"
         "opacity 1.0 override 1.0 override, class:(zen)"
         "opacity 1.0 override 1.0 override, class:(evince)"
-        "workspace 1, class:^(${browser})$"
         "workspace 3, class:^(evince)$"
         "workspace 4, class:^(Gimp-2.10)$"
-        "workspace 4, class:^(Aseprite)$"
-        "workspace 5, class:^(Audacious)$"
         "workspace 5, class:^(Spotify)$"
         "workspace 8, class:^(com.obsproject.Studio)$"
         "workspace 10, class:^(discord)$"
-        "workspace 10, class:^(WebCord)$"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(org.gnome.Calculator)$"
