@@ -2,6 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./gpu.nix
     ./../../modules/core
   ];
 

@@ -1,12 +1,12 @@
-{ pkgs-stable, ... }:
+{ pkgs, ... }:
 
-pkgs-stable.stdenv.mkDerivation {
+pkgs.stdenv.mkDerivation {
   name = "sddm-theme";
-  src = pkgs-stable.fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "Keyitdev";
     repo = "sddm-astronaut-theme";
-    rev = "bf4d01732084be29cedefe9815731700da865956";
-    sha256 = "1sj9b381gh6xpp336lq1by5qsa54chqcgq37r8daqbp2igp8dh14";
+    rev = "22bbb5ef3008756357433c61cb4444d742fd09c9";
+    hash = "sha256-+PghFV+EK6zcAoAxzTUc5DRpqeSAlP2/m2nYcHZFWDo=";
   };
 #The following does not work
   #patchPhase = ''
