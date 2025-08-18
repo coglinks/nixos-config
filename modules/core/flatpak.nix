@@ -3,9 +3,8 @@
   imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
 
   services.flatpak = {
-    enable = true;
+    enable = false;
     packages = [
-      "be.alexandervanhee.gradia"
     ];
     overrides = {
       global = {
