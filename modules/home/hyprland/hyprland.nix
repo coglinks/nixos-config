@@ -1,9 +1,13 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
     swww
+    hyprpolkitagent
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+    gradia
+    nwg-displays
+    copyq
     grim
     slurp
     wlogout
@@ -25,5 +29,10 @@
     };
     # enableNvidiaPatches = false;
     systemd.enable = true;
+    # monitor-rules
+    extraConfig = lib.mkOrder 1500 ''
+      source = ./monitors.conf
+      source = ./workspaces.conf
+      '';
   };
 }
