@@ -8,9 +8,13 @@
         rows = 3;
         columns = 3;
 
-        gap_size = 1;
+        gap_size = 0;
         bg_col = "rgb(a89984)";
         workspace_method = "first 1";
+        enable_gesture = true; # laptop touchpad
+        gesture_fingers = 3;  # 3 or 4
+        gesture_distance = 300; # how far is the "max"
+        gesture_positive = true; # positive = swipe down. Negative = swipe up.
       };
     };
 
