@@ -14,11 +14,11 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/mapper/luks-0d12f070-7fe1-45ac-bbb9-e1efdca6e54f";
+    { device = "/dev/mapper/nixos-root";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-0d12f070-7fe1-45ac-bbb9-e1efdca6e54f".device = "/dev/disk/by-uuid/0d12f070-7fe1-45ac-bbb9-e1efdca6e54f";
+  boot.initrd.luks.devices."nixos-root".device = "/dev/disk/by-uuid/0d12f070-7fe1-45ac-bbb9-e1efdca6e54f";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/29E7-0445";
@@ -26,7 +26,9 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/mapper/swap"; }
+    ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
