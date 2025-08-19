@@ -1,0 +1,17 @@
+# Keybinds
+source = ./hyprland-dot-config/keybinds.conf
+
+# general
+source = ./hyprland-dot-config/general.conf
+
+# Startup and environmental variables
+source = ./hyprland-dot-config/startup.conf
+
+# Plugins
+source = ./hyprland-dot-config/plugins.conf
+
+# monitor-rules
+source = ./hyprland-dot-config/hardware.conf
+
+# Decoration and Animations Settings
+source = ./hyprland-dot-config/decor.conf
