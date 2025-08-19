@@ -6,6 +6,7 @@
     ./docker.nix
     ./hardware.nix
     ./xserver.nix
+    ./lanzaboote.nix
     ./network.nix
     ./nh.nix
     ./nix.nix
