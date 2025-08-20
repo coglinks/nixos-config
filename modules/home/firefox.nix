@@ -42,9 +42,13 @@
       settings = {
       };
 
-      userChrome = ''                         
-        /* some css */                        
-      '';                                      
+      userChrome = ''
+        /* some css */
+        /* Only works in Firefox if layout.css.has-selector.enabled is set to true in about:config . */
+        html#main-window body:has(#sidebar-box[sidebarcommand=treestyletab_piro_sakura_ne_jp-sidebar-action][checked=true]:not([hidden=true])) #TabsToolbar {
+          visibility: collapse !important;
+        }
+      '';
 
       extensions = {
         force = true;
