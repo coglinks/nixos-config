@@ -31,7 +31,7 @@
     ./swayosd.nix                     # brightness / volume wiget
     ./swaync/swaync.nix               # notification deamon
     ./tmux.nix
-    ./yazi.nix
+    ./yazi
     # ./viewnior.nix                    # image viewer
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
