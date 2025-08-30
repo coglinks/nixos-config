@@ -8,8 +8,6 @@
   #  inherit (config.nixpkgs) config;
   #};
 
-  system.autoUpgrade.enable = true;
-
   nix.settings = {
     max-jobs = 3;
     cores = 4;
