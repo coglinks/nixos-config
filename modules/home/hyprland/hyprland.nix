@@ -6,7 +6,7 @@
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
     gradia
-    nwg-displays
+    # nwg-displays
     copyq
     grim
     slurp
