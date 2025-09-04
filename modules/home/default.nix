@@ -21,7 +21,6 @@
     ./micro.nix                       # nano replacement
     ./nemo.nix                        # file manager
     ./nix-search/nix-search.nix       # TUI to search nixpkgs
-    ./obsidian.nix
     ./p10k/p10k.nix
     ./packages                        # other packages
     ./retroarch.nix  
@@ -34,7 +33,6 @@
     ./tmux.nix
     ./yazi.nix
     # ./viewnior.nix                    # image viewer
-    ./vscodium                        # vscode fork
     ./waybar                          # status bar
     ./waypaper.nix                    # GUI wallpaper picker
     ./xdg-mimes.nix                   # xdg config
