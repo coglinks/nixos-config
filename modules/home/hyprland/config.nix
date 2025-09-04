@@ -42,7 +42,7 @@ in
         "hypridle &"
       ];
 
-# refer to Hyprland wiki for more info https://wiki.hyprland.org/Configuring/Variables/
+      # refer to Hyprland wiki for more info https://wiki.hyprland.org/Configuring/Variables/
 
       input = {
         kb_layout = "us,ara";
@@ -76,17 +76,9 @@ in
         no_border_on_floating = false;
       };
 
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
-        workspace_swipe_distance = 500;
-        workspace_swipe_invert = true;
-        workspace_swipe_min_speed_to_force = 30;
-        workspace_swipe_cancel_ratio = 0.5;
-        workspace_swipe_create_new = true;
-        workspace_swipe_forever = true;
-        #workspace_swipe_use_r = true #uncomment if wanted a forever create a new workspace with swipe right
-      };
+      gesture = [
+        "3, horizontal, workspace"
+      ];
 
       misc = {
         disable_autoreload = false;
@@ -106,7 +98,7 @@ in
       };
 
       opengl = {
-        nvidia_anti_flicker = true;  # Enable anti-flicker for NVIDIA (if using NVIDIA GPU)
+        nvidia_anti_flicker = true; # Enable anti-flicker for NVIDIA (if using NVIDIA GPU)
       };
 
       render.direct_scanout = 2;
@@ -224,7 +216,7 @@ in
 
         # screenshot
         "SUPER SHIFT, S, exec, screenshot --copy"
-        ", Print, exec, gradia --screenshot=INTERACTIVE"  # screenshot area
+        ", Print, exec, gradia --screenshot=INTERACTIVE" # screenshot area
         "SHIFT, Print, exec, gradia --screenshot=FULL" # screenshot full desktop
 
         # switch focus
@@ -249,10 +241,10 @@ in
         "CTRL ALT, up, exec, hyprctl dispatch focuswindow floating"
         "CTRL ALT, down, exec, hyprctl dispatch focuswindow tiled"
 
-  #NOTE: WORKSPACE MOVE BINDS
+        #NOTE: WORKSPACE MOVE BINDS
 
-  # The following mappings use the key codes to better support various keyboard layouts
-  # 1 is code:10, 2 is code 11, etc
+        # The following mappings use the key codes to better support various keyboard layouts
+        # 1 is code:10, 2 is code 11, etc
         # switch workspace
         "$mainMod, code:10, workspace, 1"
         "$mainMod, code:11, workspace, 2"
@@ -269,7 +261,7 @@ in
         "$mainMod, comma, workspace, e-1"
         "$mainMod, period, workspace, e+1"
 
-  # Move active window and follow to workspace mainMod + SHIFT [0-9]
+        # Move active window and follow to workspace mainMod + SHIFT [0-9]
         "$mainMod SHIFT, code:10, movetoworkspace, 1" # movetoworkspacesilent
         "$mainMod SHIFT, code:11, movetoworkspace, 2"
         "$mainMod SHIFT, code:12, movetoworkspace, 3"
@@ -283,7 +275,7 @@ in
         "$mainMod SHIFT, comma, movetoworkspace, -1"
         "$mainMod SHIFT, period, movetoworkspace, +1"
 
-  # Move active window to a workspace silently mainMod + CTRL [0-9]
+        # Move active window to a workspace silently mainMod + CTRL [0-9]
         "$mainMod CTRL, code:10, movetoworkspacesilent, 1"
         "$mainMod CTRL, code:11, movetoworkspacesilent, 2"
         "$mainMod CTRL, code:12, movetoworkspacesilent, 3"
@@ -299,10 +291,10 @@ in
 
         "$mainMod CTRL, c, movetoworkspace, empty"
 
-  ##################################
-  # Keybindings for Second Monitor (HDMI-A-5)
-  ##################################
-  # Switch workspaces with $mainMod + [F1-F9]
+        ##################################
+        # Keybindings for Second Monitor (HDMI-A-5)
+        ##################################
+        # Switch workspaces with $mainMod + [F1-F9]
         "$mainMod, F1, workspace, 11"
         "$mainMod, F2, workspace, 12"
         "$mainMod, F3, workspace, 13"
@@ -313,7 +305,7 @@ in
         "$mainMod, F8, workspace, 18"
         "$mainMod, F9, workspace, 19"
 
-  # Move active window and follow to workspace $mainMod + SHIFT + [F1-F9]
+        # Move active window and follow to workspace $mainMod + SHIFT + [F1-F9]
         "$mainMod SHIFT, F1, movetoworkspace, 11"
         "$mainMod SHIFT, F2, movetoworkspace, 12"
         "$mainMod SHIFT, F3, movetoworkspace, 13"
