@@ -2,7 +2,7 @@
 {
   imports = [
     ./zsh.nix
-    ./zsh_alias.nix
-    ./zsh_keybinds.nix
+    ./zsh-alias.nix
+    ./zsh-keybinds.nix
   ];
 }
