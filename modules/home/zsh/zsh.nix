@@ -19,6 +19,13 @@
       }
     ];
 
+    antidote = {
+      enable = true;
+      plugins = [
+        "zsh-auto-notify"
+      ];
+    };
+
     completionInit =
       #bash
       ''
