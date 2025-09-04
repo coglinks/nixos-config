@@ -9,8 +9,8 @@ let
     video = [ "mpv.desktop" ];
     directory = [ "nemo.desktop" ];
     office = [ "libreoffice.desktop" ];
-    pdf = [ "org.gnome.Evince.desktop" ];
-    terminal = [ "ghostty.desktop" ];
+    pdf = [ "zathura.desktop" ];
+    terminal = [ "kitty.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "discord.desktop" ];
   };
@@ -81,11 +81,7 @@ let
   associations =
     with lists;
     listToAttrs (
-      flatten (
-        mapAttrsToList (
-          key: map (type: attrsets.nameValuePair type defaultApps."${key}")
-        ) mimeMap
-      )
+      flatten (mapAttrsToList (key: map (type: attrsets.nameValuePair type defaultApps."${key}")) mimeMap)
     );
 in
 {
@@ -94,8 +90,10 @@ in
   xdg.mimeApps.associations.added = associations;
   xdg.mimeApps.defaultApplications = associations;
 
-  home.sessionVariables = {
-    # prevent wine from creating file associations
-    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+  home = {
+    sessionVariables = {
+      # prevent wine from creating file associations
+      WINEDLLOVERRIDES = "winemenubuilder.exe=d";
+    };
   };
 }

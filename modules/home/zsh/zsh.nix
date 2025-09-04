@@ -150,7 +150,6 @@
                   chmod +x "$filepath"
                   echo "Shortcut created: $filepath"
               }
-              export PATH="$HOME/.config/nixCats-nvim/result/bin:$PATH"
             '';
         zshConfigLateInit =
           lib.mkOrder 1500
