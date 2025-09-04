@@ -18,7 +18,6 @@
     ./hyprland # window manager
     ./kitty.nix # terminal
     ./lazygit.nix
-    ./micro.nix # nano replacement
     ./nemo.nix # file manager
     ./nvim.nix
     ./nix-search/nix-search.nix # TUI to search nixpkgs
