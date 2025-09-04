@@ -20,6 +20,7 @@
     ./lazygit.nix
     ./micro.nix # nano replacement
     ./nemo.nix # file manager
+    ./nvim.nix
     ./nix-search/nix-search.nix # TUI to search nixpkgs
     ./p10k/p10k.nix
     ./packages # other packages
