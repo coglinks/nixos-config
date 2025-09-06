@@ -18,6 +18,7 @@
     ./system.nix
     ./flatpak.nix
     ./user.nix
+    ./styling
     ./wayland.nix
     ./virtualization.nix
   ];

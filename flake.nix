@@ -46,9 +46,15 @@
       };
     };
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     waybar.url = "github:Alexays/Waybar";
 
     nur.url = "github:nix-community/NUR";
+
     nix-gaming.url = "github:fufexan/nix-gaming";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";

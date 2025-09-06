@@ -1,18 +1,18 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   home.packages = with pkgs; [ rofi-wayland ];
 
-  xdg.configFile."rofi/theme.rasi".text = ''
+  xdg.configFile."rofi/theme.rasi".text = with config.lib.stylix; ''
     * {
-      bg-col: #1D2021;
-      bg-col-light: #282828;
-      border-col: #A89984;
-      selected-col: #3C3836;
-      green: #98971A;
-      fg-col: #FBF1C7;
-      fg-col2: #EBDBB2;
-      grey: #BDAE93;
-      highlight: @green;
+      bg-col: #${colors.base00};       /* Background */
+      bg-col-light: #${colors.base01}; /* Lighter background */
+      border-col: #${colors.base03};   /* Border (use a neutral tone) */
+      selected-col: #${colors.base02}; /* Selected element background */
+      green: #${colors.base0B};        /* Green (accents) */
+      fg-col: #${colors.base05};       /* Normal text */
+      fg-col2: #${colors.base06};      /* Secondary text */
+      grey: #${colors.base04};         /* Grey tone */
+      highlight: @green;               /* Highlight color */
     }
   '';
 
