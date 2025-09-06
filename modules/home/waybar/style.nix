@@ -1,108 +1,90 @@
-{ ... }:
-let
-  custom = {
-    font = "Maple Mono";
-    font_size = "18px";
-    font_weight = "bold";
-    text_color = "#FBF1C7";
-    background_0 = "#1D2021";
-    background_1 = "#282828";
-    border_color = "#A89984";
-    red = "#CC241D";
-    green = "#98971A";
-    yellow = "#FABD2F";
-    blue = "#458588";
-    magenta = "#B16286";
-    cyan = "#689D6A";
-    orange = "#D65D0E";
-    orange_bright = "#FE8019";
-    opacity = "1";
-    indicator_height = "2px";
-  };
-in
+{ config, ... }:
+
 {
-  programs.waybar.style = with custom; ''
-    * {
-      border: none;
-      border-radius: 0px;
-      padding: 0;
-      margin: 0;
-      font-family: ${font};
-      font-weight: ${font_weight};
-      opacity: ${opacity};
-      font-size: ${font_size};
-    }
+  programs.waybar.style =
+    #css
+    ''
+      * {
+        border: none;
+        border-radius: 0px;
+        padding: 0;
+        margin: 0;
+        font-family: ${config.stylix.fonts.monospace.name};
+        font-weight: bold;
+        /* opacity: opacity; */
+        /* font-size: font_size; */
+      }
 
-    window#waybar {
-      background: #282828;
-      border-top: 1px solid ${border_color};
-    }
+      window#waybar {
+        background: #${config.lib.stylix.colors.base01};
+        border-top: 1px solid #${config.lib.stylix.colors.base0D};
+      }
 
-    tooltip {
-      background: ${background_1};
-      border: 1px solid ${border_color};
-    }
-    tooltip label {
-      margin: 5px;
-      color: ${text_color};
-    }
+      tooltip {
+        background: #${config.lib.stylix.colors.base00};
+        border: 1px solid #${config.lib.stylix.colors.base0D};
+      }
+      tooltip label {
+        margin: 5px;
+        color: #${config.lib.stylix.colors.base05};
+      }
 
-    #workspaces {
-      padding-left: 15px;
-    }
-    #workspaces button {
-      color: ${yellow};
-      padding-left:  5px;
-      padding-right: 5px;
-      margin-right: 10px;
-    }
-    #workspaces button.empty {
-      color: ${text_color};
-    }
-    #workspaces button.active {
-      color: ${orange_bright};
-    }
+      #workspaces {
+        padding-left: 15px;
+      }
+      #workspaces button {
+        color: #${config.lib.stylix.colors.base03};
+        padding-left:  5px;
+        padding-right: 5px;
+        margin-right: 10px;
+      }
+      #workspaces button.empty {
+        color: #${config.lib.stylix.colors.base0D};
+      }
+      #workspaces button.active {
+        color: #${config.lib.stylix.colors.base0B};
+      }
 
-    #clock {
-      color: ${text_color};
-    }
+      #clock {
+        color: #${config.lib.stylix.colors.base05};
+      }
 
-    #tray {
-      margin-left: 10px;
-      color: ${text_color};
-    }
-    #tray menu {
-      background: ${background_1};
-      border: 1px solid ${border_color};
-      padding: 8px;
-    }
-    #tray menuitem {
-      padding: 1px;
-    }
+      #tray {
+        margin-left: 10px;
+        color: #${config.lib.stylix.colors.base05};
+      }
+      #tray menu {
+        background: #${config.lib.stylix.colors.base00};
+        border: 1px solid #${config.lib.stylix.colors.base0D};
+        padding: 6px;
+      }
+      #tray menuitem {
+        padding: 1px;
+      }
 
-    #pulseaudio, #network, #cpu, #memory, #disk, #battery, #language, #custom-notification {
-      padding-left: 5px;
-      padding-right: 5px;
-      margin-right: 10px;
-      color: ${text_color};
-    }
+      #pulseaudio, #network, #cpu, #memory, #disk, #battery, #language, #custom-notification {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-right: 10px;
+        color: #${config.lib.stylix.colors.base05};
+      }
 
-    #pulseaudio, #language {
-      margin-left: 15px;
-    }
+      #pulseaudio, #language {
+        margin-left: 15px;
+      }
 
-    #custom-notification {
-      margin-left: 15px;
-      padding-right: 2px;
-      margin-right: 5px;
-    }
+      #custom-notification {
+        margin-left: 15px;
+        padding-right: 2px;
+        margin-right: 5px;
+      }
 
-    #custom-launcher {
-      font-size: 20px;
-      color: ${text_color};
-      font-weight: bold;
-      margin-left: 15px;
-      padding-right: 10px;
-    }
-  '';
+      #custom-launcher {
+        font-size: 15px;
+        color: #${config.lib.stylix.colors.base05};
+        font-weight: bold;
+        margin-left: 15px;
+        padding-right: 10px;
+      }
+    '';
 }
