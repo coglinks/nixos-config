@@ -11,9 +11,9 @@
 {
   # OpenGL
   hardware.graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
+    enable = true;
+    enable32Bit = true;
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
@@ -28,7 +28,7 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
     # of just the bare essentials.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -49,30 +49,30 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-  
-#  hardware.nvidia.prime.offload = {
-#    enable = true;
-#    enableOffloadCmd = true;
-#  };
+
+  #  hardware.nvidia.prime.offload = {
+  #    enable = true;
+  #    enableOffloadCmd = true;
+  #  };
   hardware.nvidia.prime.sync.enable = true;
-  
+
   hardware.nvidia.prime = {
-      # Correct the Bus ID values as per your system
-      intelBusId = "PCI:0:2:0"; # Intel GPU Bus ID
-      nvidiaBusId = "PCI:1:0:0"; # NVIDIA GPU Bus ID
+    # Correct the Bus ID values as per your system
+    intelBusId = "PCI:0:2:0"; # Intel GPU Bus ID
+    nvidiaBusId = "PCI:1:0:0"; # NVIDIA GPU Bus ID
   };
 
-#  specialisation = {
-#    gaming-time.configuration = {
-#
-#      hardware.nvidia = {
-#        prime.sync.enable = lib.mkForce true;
-#        prime.offload = {
-#          enable = lib.mkForce false;
-#          enableOffloadCmd = lib.mkForce false;
-#        };
-#      };
-#
-#    };
-#  };
+  #  specialisation = {
+  #    gaming-time.configuration = {
+  #
+  #      hardware.nvidia = {
+  #        prime.sync.enable = lib.mkForce true;
+  #        prime.offload = {
+  #          enable = lib.mkForce false;
+  #          enableOffloadCmd = lib.mkForce false;
+  #        };
+  #      };
+  #
+  #    };
+  #  };
 }
