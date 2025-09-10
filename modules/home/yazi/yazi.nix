@@ -50,7 +50,21 @@
             for = "unix";
           }
         ];
+        open-pdf = [
+          {
+            run = ''zathura $@ &'';
+            desc = "Open PDF";
+            block = false;
+            for = "unix";
+          }
+        ];
       };
+      open.prepend_rules = [
+        {
+          name = "*.pdf";
+          use = "open-pdf";
+        }
+      ];
 
     };
   };

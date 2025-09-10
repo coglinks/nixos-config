@@ -4,7 +4,7 @@
     enable = true;
     clean = {
       enable = true;
-      extraArgs = "--keep-since 7d --keep 5";
+      extraArgs = "--keep-since 7d --keep 5 --max-jobs 3 --cores 4";
     };
     flake = "/home/${username}/nixos-config";
   };

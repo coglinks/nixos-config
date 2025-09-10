@@ -9,7 +9,7 @@ let
     video = [ "mpv.desktop" ];
     directory = [ "nemo.desktop" ];
     office = [ "libreoffice.desktop" ];
-    pdf = [ "zathura.desktop" ];
+    pdf = [ "org.pwmt.zathura.desktop" ];
     terminal = [ "kitty.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
     discord = [ "discord.desktop" ];

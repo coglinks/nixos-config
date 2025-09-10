@@ -176,7 +176,7 @@ label {
     /* unset the annoying focus thingie */
     all: unset;
     border: none;
-    opacity: 0;
+    opacity: 1;
     padding: 0px;
     box-shadow: none;
     /* selectable: no; */
@@ -401,13 +401,13 @@ label {
 .widget-mpris>box>button:nth-child(1) {
     margin-left: -25px;
     margin-right: -25px;
-    opacity: 0;
+    opacity: 1;
 }
 
 .widget-mpris>box>button:nth-child(3) {
     margin-left: -25px;
     margin-right: -25px;
-    opacity: 0;
+    opacity: 1;
 }
 
 .widget-mpris-album-art {
@@ -429,7 +429,7 @@ label {
 }
 
 carouselindicatordots {
-    opacity: 0;
+    opacity: 1;
 }
 
 .widget-mpris-title {
