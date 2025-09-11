@@ -63,8 +63,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    xremap-flake.url = "github:xremap/nix-flake";
   };
 
   outputs =
