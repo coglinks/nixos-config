@@ -318,6 +318,11 @@ in
         "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
       ];
 
+      bindn = [
+        ",Escape,exec, swaync-client --close-latest"
+        "SHIFT,Escape,exec, swaync-client --close-all"
+        "ALT, Escape,exec, swaync-client --hide-all"
+      ];
       binde = [
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"
         ",XF86AudioLowerVolume,exec, pamixer -d 2"
