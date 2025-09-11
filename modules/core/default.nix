@@ -2,6 +2,7 @@
 {
   imports = [
     ./bootloader.nix
+    ./xremap.nix
     ./display-manager.nix
     ./docker.nix
     ./hardware.nix
