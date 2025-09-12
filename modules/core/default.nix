@@ -15,6 +15,7 @@
     ./security.nix
     ./services.nix
     ./steam.nix
+    ./printer.nix
     ./system.nix
     ./flatpak.nix
     ./user.nix
