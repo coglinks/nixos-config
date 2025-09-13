@@ -12,6 +12,7 @@
     soundwireserver
     video-trimmer
     vlc
+    xournalpp
 
     ## Office
     libreoffice
