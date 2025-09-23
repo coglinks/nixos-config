@@ -14,9 +14,7 @@
       color.ui = true;
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
 
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
+      credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
     };
 
     delta = {
@@ -32,7 +30,10 @@
     lfs.enable = true;
   };
 
-  home.packages = [ pkgs.gh ]; # pkgs.git-lfs
+  home.packages = with pkgs; [
+    git-annex
+    gh
+  ];
 
   xdg.configFile."git/.gitignore".text = ''
     .vscode

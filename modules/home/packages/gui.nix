@@ -15,6 +15,7 @@
     xournalpp
 
     ## Office
+    rstudio
     libreoffice
     gnome-calculator
     ciscoPacketTracer8 # Go to https://www.netacad.com/resources/lab-downloads?courseLang=en-US to download CiscoPacketTracer822_amd64_signed.deb (If the file name is different, change it to as required by nix). Reason is cuz of:
