@@ -11,7 +11,6 @@
     ./flow.nix # terminal text editor
     ./thunderbird.nix
     ./fzf.nix # fuzzy finder
-    ./gaming.nix # packages related to gaming
     ./git.nix # version control
     ./gnome.nix # gnome apps
     ./gtk.nix # gtk theme

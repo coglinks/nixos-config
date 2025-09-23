@@ -1,6 +1,17 @@
 { pkgs, inputs, ... }:
 {
-  home.packages = with pkgs; [
+  imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
+
+  environment.systemPackages = with pkgs; [
+    mangohud
+    protonup
+    lumafly
+    lutris
+    heroic
+    bottles
+    # support both 32-bit and 64-bit applications
+    wineWowPackages.stable
+    winetricks
     ## Utils
     # gamemode
     # gamescope
@@ -28,5 +39,10 @@
     snes9x
     # cemu
     # dolphin-emu
+  ];
+
+  services.flatpak.packages = [
+    "com.github.Matoking.protontricks"
+    "io.itch.itch"
   ];
 }

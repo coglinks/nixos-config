@@ -2,7 +2,7 @@
 {
   programs = {
     steam = {
-      enable = false;
+      enable = true;
 
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = false;
@@ -20,5 +20,11 @@
         "--expose-wayland"
       ];
     };
+    gamemode = {
+      enable = true;
+    };
+  };
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
   };
 }
