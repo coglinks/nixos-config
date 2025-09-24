@@ -3,6 +3,7 @@
   imports = [
     ./bootloader.nix
     ./gotenberg.nix
+    ./fonts.nix
     ./gaming.nix
     ./display-manager.nix
     ./docker.nix
