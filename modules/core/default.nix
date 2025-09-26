@@ -4,6 +4,7 @@
     ./bootloader.nix
     ./gotenberg.nix
     ./fonts.nix
+    ./nextcloud.nix
     ./gaming.nix
     ./display-manager.nix
     ./docker.nix
