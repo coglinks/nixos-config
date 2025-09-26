@@ -53,6 +53,11 @@
 
     waybar.url = "github:Alexays/Waybar";
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nur.url = "github:nix-community/NUR";
 
     nix-gaming.url = "github:fufexan/nix-gaming";
@@ -88,7 +93,10 @@
         };
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/laptop ];
+          modules = [
+            inputs.sops-nix.nixosModules.sops
+            ./hosts/laptop
+          ];
           specialArgs = {
             host = "laptop";
             inherit self inputs username;

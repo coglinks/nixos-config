@@ -7,6 +7,7 @@
     ./../hardware-configuration-extra.nix
     ./gpu.nix
     ./../../modules/core
+    ./../../modules/secrets
   ];
 
   environment.systemPackages = with pkgs; [
