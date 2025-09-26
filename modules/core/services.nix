@@ -14,5 +14,9 @@
       gcr
       gnome-settings-daemon
     ];
+    caddy = {
+      enable = false;
+      extraConfig = '''';
+    };
   };
 }
