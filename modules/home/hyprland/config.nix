@@ -24,8 +24,8 @@ in
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
         "[workspace 1] ${browser}"
-        "[workspace 4 silent ] ${terminal}"
-        "[workspace 5 silent ] missioncenter"
+        "[workspace 8 silent ] ${terminal}"
+        "[workspace 9 silent ] missioncenter"
 
         "gnome-keyring-daemon --start --components=secrets,ssh"
         "systemctl --user start hyprpolkitagent"
