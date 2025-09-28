@@ -1,13 +1,7 @@
 { ... }:
 {
   programs.ssh = {
-    enable = true;
-
-    addKeysToAgent = "1h";
-
-    controlMaster = "auto";
-    controlPath = "~/.ssh/control-%r@%h:%p";
-    controlPersist = "10m";
+    enable = false;
 
     matchBlocks = {
       github = {
@@ -17,9 +11,13 @@
         port = 443;
         identityFile = "~/.ssh/id_github";
         identitiesOnly = true;
+        addKeysToAgent = "1h";
+        controlMaster = "auto";
+        controlPath = "~/.ssh/control-%r@%h:%p";
+        controlPersist = "10m";
       };
     };
   };
 
-  services.ssh-agent.enable = true;
+  services.ssh-agent.enable = false;
 }
