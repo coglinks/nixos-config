@@ -2,6 +2,7 @@
 {
   imports = [
     ./audacious.nix # music player
+    ./sops.nix
     ./activitywatch.nix
     ./bat.nix # better cat command
     ./btop.nix # resouces monitor
