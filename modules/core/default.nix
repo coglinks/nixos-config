@@ -12,7 +12,7 @@
     ./lanzaboote.nix
     ./network.nix
     ./nh.nix
-    ./nix.nix
+    # ./nix.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix
