@@ -6,6 +6,7 @@
     ./activitywatch.nix
     ./bat.nix # better cat command
     ./btop.nix # resouces monitor
+    ./taskwarrior.nix
     ./cava.nix # audio visualizer
     ./discord.nix # discord
     ./fastfetch.nix # fetch tool
