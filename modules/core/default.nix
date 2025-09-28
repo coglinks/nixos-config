@@ -5,6 +5,7 @@
     ./gotenberg.nix
     ./fonts.nix
     ./gaming.nix
+    ./gnome-network-displays.nix
     ./display-manager.nix
     ./docker.nix
     ./hardware.nix
