@@ -1,5 +1,21 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  fetchFromGithub,
+  ...
+}:
 
+let
+  aw-watcher-tmux = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "aw-watcher-tmux";
+    version = "unstable-2025-09-28";
+    src = fetchFromGithub {
+      owner = "akohlbecker";
+      repo = "aw-watcher-tmux";
+      rev = "efaa7610add52bd2b39cd98d0e8e082b1e126487";
+      hash = "sha256-L6YLyEOmb+vdz6bJdB0m5gONPpBp2fV3i9PiLSNrZNM=";
+    };
+  };
+in
 {
   programs.tmux = {
     enable = true;
@@ -31,6 +47,7 @@
       ## plugin setups
 
       set -g @sessionx-bind 'o'
+        set -g @plugin 'akohlbecker/aw-watcher-tmux'
 
       # nvim: `escape-time` (500) is higher than 300ms
       set-option -sg escape-time 10
