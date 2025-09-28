@@ -16,6 +16,7 @@
     ./qt.nix
     ./pipewire.nix
     ./program.nix
+    ./taskchampion.nix
     ./security.nix
     ./services.nix
     ./steam.nix
