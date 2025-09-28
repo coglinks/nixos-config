@@ -13,6 +13,7 @@
     ./network.nix
     ./nh.nix
     # ./nix.nix
+    ./qt.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix
