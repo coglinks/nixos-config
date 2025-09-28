@@ -41,5 +41,6 @@
       # nvim: $TERM should be "screen-256color" or "tmux-256color" in tmux. Colors might look wrong.
       set-option -g default-terminal "screen-256color"
     '';
+        run '~/.tmux/plugins/tpm/tpm'
   };
 }
