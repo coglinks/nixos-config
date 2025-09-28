@@ -21,24 +21,30 @@
     };
   };
 
-  home.file."~/.config/awatcher".text =
-    #yaml
-    ''
-      [server]
-      port = 5600
-      host = "127.0.0.1"
+  home = {
+    packages = with pkgs; [
+      aw-qt
+      activitywatch
+    ];
+    file."~/.config/awatcher".text =
+      #yaml
+      ''
+        [server]
+        port = 5600
+        host = "127.0.0.1"
 
-      [awatcher]
-      idle-timeout-seconds=180
-      poll-time-idle-seconds=4
-      poll-time-window-seconds=1
+        [awatcher]
+        idle-timeout-seconds=180
+        poll-time-idle-seconds=4
+        poll-time-window-seconds=1
 
-      [[awatcher.filters]]
-      # match only "navigator"
-      match-app-id = "navigator"
-      # match any title which contains "Secret" or "secret" 
-      match-title = ".*[sS]ecret.*"
-      replace-app-id = "firefox"
-      replace-title = "Unknown"
-    '';
+        [[awatcher.filters]]
+        # match only "navigator"
+        match-app-id = "navigator"
+        # match any title which contains "Secret" or "secret" 
+        match-title = ".*[sS]ecret.*"
+        replace-app-id = "firefox"
+        replace-title = "Unknown"
+      '';
+  };
 }
