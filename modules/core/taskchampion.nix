@@ -6,6 +6,14 @@
   };
 
   imports = [
-    ./client-ids.nix
+    ./taskchampion-crypt.nix
+    /*
+      services.taskchampion-sync-server = {
+        host = "<ip addr>";
+        allowClientIds = [
+          "<client uuid>"
+        ];
+      };
+    */
   ];
 }
