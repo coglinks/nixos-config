@@ -1,1 +1,1 @@
-modules/core/client-ids.nix filter=git-crypt
+*crypt.nix filter=git-crypt
