@@ -21,4 +21,9 @@
       include ${config.sops.templates."taskwarrior-sync-conf".path}
     '';
   };
+
+  home.packages = with pkgs; [
+    timewarrior
+    taskwarrior-tui
+  ];
 }
