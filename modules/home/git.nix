@@ -32,6 +32,7 @@
 
   home.packages = with pkgs; [
     git-annex
+    git-crypt
     gh
   ];
 
