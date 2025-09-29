@@ -11,8 +11,6 @@
     age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
     defaultSopsFile = ./files/secrets.yaml;
     defaultSopsFormat = "yaml";
-    secrets."taskwarrior/lenovo-loq/client-id" = { };
-    secrets."taskwarrior/lenovo-loq/encyption_secret" = { };
   };
 
   # systemd.services."${username}" = {
