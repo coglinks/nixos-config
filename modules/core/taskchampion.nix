@@ -3,6 +3,7 @@
 {
   services.taskchampion-sync-server = {
     enable = true;
+    openFirewall = true;
   };
 
   imports = [
