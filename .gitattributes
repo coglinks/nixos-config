@@ -1,1 +1,2 @@
+modules/core/client-ids.nix filter=git-crypt
 . !text !filter !merge !diff
