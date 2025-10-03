@@ -28,6 +28,10 @@
     };
 
     lfs.enable = true;
+
+    aliases = {
+      apply-gitignore = "!git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached";
+    };
   };
 
   home.packages = with pkgs; [
