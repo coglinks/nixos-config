@@ -4,6 +4,7 @@
     ## Multimedia
     audacity
     gimp
+    inkscape
     gthumb
     feh
     blender
