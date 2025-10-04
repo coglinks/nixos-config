@@ -27,7 +27,9 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    hashedPasswordFile = config.sops.secrets.my-password.path;
+    # doesnt work for some reason
+    # hashedPasswordFile = config.sops.secrets.my-password.path;
+    initialPassword = "test";
     description = "${username}";
     extraGroups = [
       "networkmanager"

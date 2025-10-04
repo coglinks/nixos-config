@@ -1,9 +1,9 @@
-{ ... }:
+{ lib, ... }:
 
 {
   qt = {
     enable = true;
     style = "adwaita";
-    platformTheme = "gnome";
+    platformTheme = lib.mkForce "gnome";
   };
 }
