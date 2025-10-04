@@ -11,6 +11,7 @@
     age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
     defaultSopsFile = ./files/secrets.yaml;
     defaultSopsFormat = "yaml";
+    secrets.my-password.neededForUsers = true;
   };
 
   # systemd.services."${username}" = {
