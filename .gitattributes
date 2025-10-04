@@ -1,2 +1,3 @@
-*crypt.nix filter=git-crypt
+*crypt.nix filter=git-crypt diff=git-crypt
+modules/core/taskchampion-crypt.nix filter=git-crypt diff=git-crypt
 . !text !filter !merge !diff
