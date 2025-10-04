@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   username,
   host,
   ...
@@ -26,6 +27,7 @@
 
   users.users.${username} = {
     isNormalUser = true;
+    hashedPasswordFile = config.sops.secrets.my-password.path;
     description = "${username}";
     extraGroups = [
       "networkmanager"
