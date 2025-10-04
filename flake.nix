@@ -104,7 +104,10 @@
         };
         vm = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ ./hosts/vm ];
+          modules = [
+            inputs.sops-nix.nixosModules.sops
+            ./hosts/vm
+          ];
           specialArgs = {
             host = "vm";
             inherit self inputs username;

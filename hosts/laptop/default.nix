@@ -7,6 +7,7 @@
     ./../hardware-configuration-extra.nix
     ./gpu.nix
     ./../../modules/core
+    ./../../modules/core/loq-default.nix
   ];
 
   environment.systemPackages = with pkgs; [
