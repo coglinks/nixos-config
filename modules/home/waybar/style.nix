@@ -49,6 +49,19 @@
         color: #${config.lib.stylix.colors.base05};
       }
 
+      #idle_inhibitor {
+        color: #${config.lib.stylix.colors.base05};
+        padding-left:  5px;
+        padding-right: 5px;
+        margin-right: 10px;
+      }
+      #idle_inhibitor.activated {
+        color: #${config.lib.stylix.colors.base0B};
+        padding-left:  5px;
+        padding-right: 5px;
+        margin-right: 10px;
+      }
+
       #tray {
         margin-left: 10px;
         color: #${config.lib.stylix.colors.base05};

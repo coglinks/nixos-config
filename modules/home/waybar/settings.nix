@@ -13,7 +13,10 @@
       "hyprland/workspaces"
       "tray"
     ];
-    modules-center = [ "clock" ];
+    modules-center = [
+      "idle_inhibitor"
+      "clock"
+    ];
     modules-right = [
       "cpu"
       "memory"
@@ -99,6 +102,16 @@
       format-time = "{H}h{M}m";
       tooltip = true;
       tooltip-format = "{time}";
+    };
+    idle_inhibitor = {
+      tooltip = true;
+      tooltip-format-activated = "Idle_inhibitor active";
+      tooltip-format-deactivated = "Idle_inhibitor not active";
+      format = "{icon}";
+      format-icons = {
+        activated = " ";
+        deactivated = " ";
+      };
     };
     "hyprland/language" = {
       format = "";
