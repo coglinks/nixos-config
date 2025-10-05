@@ -53,6 +53,11 @@
 
     waybar.url = "github:Alexays/Waybar";
 
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -88,7 +93,12 @@
           modules = [ ./hosts/desktop ];
           specialArgs = {
             host = "desktop";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              system
+              ;
           };
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -99,7 +109,12 @@
           ];
           specialArgs = {
             host = "laptop";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              system
+              ;
           };
         };
         vm = nixpkgs.lib.nixosSystem {
@@ -110,7 +125,12 @@
           ];
           specialArgs = {
             host = "vm";
-            inherit self inputs username;
+            inherit
+              self
+              inputs
+              username
+              system
+              ;
           };
         };
       };
