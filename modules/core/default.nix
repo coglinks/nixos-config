@@ -2,6 +2,7 @@
 {
   imports = [
     ../secrets
+    ./winapps
     ./gotenberg.nix
     ./fonts.nix
     ./docker.nix

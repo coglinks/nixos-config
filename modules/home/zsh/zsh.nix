@@ -139,6 +139,8 @@
           lib.mkOrder 1000
             # bash
             ''
+              export PATH=/usr/local/bin:$PATH
+
               url() {
                   local link="$1"
                   local name="$2"

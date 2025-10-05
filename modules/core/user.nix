@@ -1,5 +1,6 @@
 {
   pkgs,
+  system,
   inputs,
   config,
   username,
@@ -14,7 +15,14 @@
     ];
     useUserPackages = true;
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        username
+        host
+        system
+        ;
+    };
     users.${username} = {
       imports = if (host == "desktop") then [ ./../home/default.desktop.nix ] else [ ./../home ];
       home.username = "${username}";
@@ -33,6 +41,7 @@
     description = "${username}";
     extraGroups = [
       "networkmanager"
+      "kvm"
       "wheel"
     ];
     shell = pkgs.zsh;
