@@ -164,9 +164,6 @@ tooltip {
 
 /*-----Indicators----*/
 #custom-hypridle.notactive,
-#idle_inhibitor.activated {
-  color: #39FF14;
-}
 
 #battery.critical:not(.charging) {
     color: #f53c3c;
