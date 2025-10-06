@@ -21,6 +21,9 @@
       include ${config.sops.templates."taskwarrior-sync-conf".path}
     '';
   };
+  services.taskwarrior-sync = {
+    enable = true;
+  };
 
   home.packages = with pkgs; [
     timewarrior
