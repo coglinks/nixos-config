@@ -44,7 +44,7 @@
       "*.jpg filter=lfs diff=lfs merge=lfs -text"
       "*.jpeg filter=lfs diff=lfs merge=lfs -text"
 
-      "* filter=annex annex.largefiles=nothing"
+      "* annex.largefiles=nothing"
       "*.pdf filter=annex annex.largefiles=anything"
       "*.doc filter=annex annex.largefiles=anything"
       "*.docx filter=annex annex.largefiles=anything"
