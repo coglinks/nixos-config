@@ -55,7 +55,7 @@
             "g"
             "n"
           ];
-          run = "cd ~/st/notes";
+          run = "cd ~/st/notes/sems/sem3";
           desc = "go notes";
         }
         {
