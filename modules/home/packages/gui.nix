@@ -19,7 +19,7 @@
     rstudio
     libreoffice
     gnome-calculator
-    logisim
+    logisim-evolution
     ciscoPacketTracer8 # Go to https://www.netacad.com/resources/lab-downloads?courseLang=en-US to download CiscoPacketTracer822_amd64_signed.deb (If the file name is different, change it to as required by nix). Reason is cuz of:
     /*
       Unfortunately, we cannot download file CiscoPacketTracer822_amd64_signed.deb automatically.
