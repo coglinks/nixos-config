@@ -5,6 +5,7 @@
     audacity
     gimp
     inkscape
+    gnome-sound-recorder
     gthumb
     feh
     blender
