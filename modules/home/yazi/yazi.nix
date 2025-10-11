@@ -104,6 +104,7 @@
           {
             run = ''zathura $@ &'';
             desc = "Open PDF";
+            orphan = true;
             block = false;
             for = "unix";
           }
