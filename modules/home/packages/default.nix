@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./custom
     ./cli.nix
     ./custom.nix
     ./dev.nix
