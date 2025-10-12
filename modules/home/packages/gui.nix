@@ -2,9 +2,11 @@
 {
   home.packages = with pkgs; [
     ## Multimedia
+    kodi-wayland
     audacity
     gimp
     inkscape
+    darktable
     gnome-sound-recorder
     gthumb
     feh
