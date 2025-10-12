@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   home.packages = with pkgs; [ ripdrag ];
   programs.yazi = {
     enable = true;
+    package = inputs.yazi.packages.${pkgs.system}.default;
     enableZshIntegration = true;
     enableBashIntegration = true;
     plugins = {
@@ -109,7 +110,22 @@
             for = "unix";
           }
         ];
+        program-chooser = [
+          {
+            run = ''program-chooser $@'';
+            desc = "program-chooser";
+            orphan = true;
+            block = false;
+            for = "unix";
+          }
+        ];
       };
+      open.append_rules = [
+        {
+          mime = "*";
+          use = "program-chooser";
+        }
+      ];
       open.prepend_rules = [
         {
           name = "*.pdf";
