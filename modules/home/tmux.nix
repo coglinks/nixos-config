@@ -41,7 +41,7 @@ in
 
         # image.nvim setup
 
-        set -gq allow-passthrough on
+        set -g allow-passthrough on
         set -g visual-activity off
 
         ## plugin setups
@@ -54,6 +54,7 @@ in
 
         # nvim: focus-events` is not enabled. |'autoread'| may not work.
         set-option -g focus-events on
+
 
         # nvim: $TERM should be "screen-256color" or "tmux-256color" in tmux. Colors might look wrong.
         set-option -g default-terminal "screen-256color"
