@@ -1,6 +1,7 @@
 { pkgs, system, ... }:
 
 {
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
   services.displayManager.sddm = {
     enable = true;
     package = pkgs.kdePackages.sddm;
