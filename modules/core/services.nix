@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
   services = {
+    jellyfin = {
+      enable = true;
+      openFirewall = true;
+    };
     gvfs.enable = true;
     gnome = {
       tinysparql.enable = true;
