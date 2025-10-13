@@ -79,6 +79,7 @@
     poweralertd
     unzip
     wget
+    nil
     wl-clipboard # clipboard utils for wayland (wl-copy, wl-paste)
     xdg-utils
 
