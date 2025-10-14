@@ -26,6 +26,13 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/kingston" =
+    { device = "/dev/mapper/kingston";
+      fsType = "ext4";
+    };
+
+  boot.initrd.luks.devices."kingston".device = "/dev/disk/by-uuid/29d005dc-d213-455b-895e-34083696e8be";
+
   swapDevices =
     [ { device = "/dev/mapper/swap"; }
     ];
