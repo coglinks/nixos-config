@@ -157,7 +157,7 @@ in
         "$mainMod, X, togglesplit,"
         "$mainMod, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
-        "$mainMod SHIFT, B, exec, toggle-waybar"
+        "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
