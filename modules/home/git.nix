@@ -3,9 +3,12 @@
   programs.git = {
     enable = true;
 
-    userName = "incogshift";
-    userEmail = "incog267@gmail.com";
-
+    userName = "coglinks";
+    userEmail = "103402972+coglinks@users.noreply.github.com";
+    signing = {
+      key = "0FA54B4EDF6CE0E9";
+      signByDefault = true;
+    };
     extraConfig = {
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
