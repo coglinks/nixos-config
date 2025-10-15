@@ -113,6 +113,7 @@
           modules = [
             inputs.sops-nix.nixosModules.sops
             ./hosts/laptop
+            ./overlays
           ];
           specialArgs = {
             host = "laptop";
@@ -130,6 +131,7 @@
           modules = [
             inputs.sops-nix.nixosModules.sops
             ./hosts/vm
+            ./overlays
           ];
           specialArgs = {
             host = "vm";
