@@ -1,9 +1,9 @@
 { ... }:
 
 {
-  service.gitolite = {
+  services.gitolite = {
     enable = true;
-    adminPubKey = builtins.readFile ./gitolite-crypt.pub;
+    adminPubkey = builtins.readFile ./gitolite-crypt.pub;
     enableGitAnnex = true;
   };
 }
