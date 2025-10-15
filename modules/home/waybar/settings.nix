@@ -34,7 +34,7 @@
           workspace-taskbar = {
             enable = true;
             update-active-window = true;
-            format = "{icon} {title}:.15";
+            format = "{icon} {title:.15}";
           };
           on-click = "activate";
         };
