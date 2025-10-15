@@ -6,6 +6,7 @@
     audacity
     gimp
     inkscape
+    davinci-resolve
     darktable
     gnome-sound-recorder
     gthumb
