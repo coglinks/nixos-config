@@ -39,7 +39,7 @@
       options = [ "bind" ];
     };
 
-  fileSystems."/kingston" =
+  fileSystems."/inc" =
     { device = "/mnt/kingston/st";
       fsType = "none";
       options = [ "bind" ];
