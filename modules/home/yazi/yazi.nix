@@ -136,7 +136,7 @@
       ];
       open.prepend_rules = [
         {
-          name = "*.pdf";
+          url = "*.pdf";
           use = "open-pdf";
         }
       ];
