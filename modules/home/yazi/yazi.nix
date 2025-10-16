@@ -30,17 +30,25 @@
         {
           on = [
             "g"
-            "S"
+            "s"
           ];
-          run = "cd ~/st";
-          desc = "go to ~/st";
+          run = "cd /inc";
+          desc = "go to /inc";
+        }
+        {
+          on = [
+            "g"
+            "r"
+          ];
+          run = "cd /inc/remotes";
+          desc = "go to remotes";
         }
         {
           on = [
             "g"
             "t"
           ];
-          run = "cd ~/st/test";
+          run = "cd /inc/test";
           desc = "go to test dir";
         }
         {
@@ -56,7 +64,7 @@
             "g"
             "n"
           ];
-          run = "cd ~/st/notes/sems/sem3";
+          run = "cd /inc/notes/sems/sem3";
           desc = "go notes";
         }
         {
@@ -64,7 +72,7 @@
             "g"
             "N"
           ];
-          run = "cd ~/st/annex/notes-lfs";
+          run = "cd /inc/annex/notes-lfs";
           desc = "go notes-lfs";
         }
       ];
