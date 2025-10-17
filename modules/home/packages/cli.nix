@@ -18,6 +18,7 @@
     asciinema
     asciinema-agg
     binsider
+    devenv
     bitwise # cli tool for bit / hex manipulation
     broot # tree files view
     caligula # User-friendly, lightweight TUI for disk imaging
