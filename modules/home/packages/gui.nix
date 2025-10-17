@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
+  imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
+
   home.packages = with pkgs; [
     ## Multimedia
     kodi-wayland
@@ -45,4 +47,20 @@
     ldtk
     tiled
   ];
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+    ];
+    overrides = {
+      global = {
+        # Force Wayland by default
+        Context.sockets = [
+          "wayland"
+          "!x11"
+          "!fallback-x11"
+        ];
+      };
+    };
+  };
 }

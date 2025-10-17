@@ -3,7 +3,7 @@
   imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
 
   services.flatpak = {
-    enable = false;
+    enable = true;
     packages = [
     ];
     overrides = {
