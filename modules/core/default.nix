@@ -10,7 +10,7 @@
     ./xserver.nix
     ./network.nix
     ./nh.nix
-    # ./nix.nix
+    ./nix.nix
     ./qt.nix
     ./pipewire.nix
     ./gitolite.nix
