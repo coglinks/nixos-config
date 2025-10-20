@@ -1,0 +1,4 @@
+*crypt.nix filter=git-crypt diff=git-crypt
+*crypt.pub filter=git-crypt diff=git-crypt
+modules/home/winapps/compose.yaml filter=git-crypt diff=git-crypt
+. !text !filter !merge !diff
