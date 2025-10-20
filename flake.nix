@@ -37,8 +37,6 @@
       };
     };
 
-    hyprsession.url = "github:joshurtree/hyprsession";
-
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs = {
