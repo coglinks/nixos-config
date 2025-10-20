@@ -1,0 +1,7 @@
+keys:
+  - &admin_incogshift age19y4hv4kr9ua3hwadpsmf93es62xw6vustvj0qng5h0h7v7vhdc8q004x2w
+creation_rules:
+  - path_regex: modules/secrets/files/secrets.yaml$
+    key_groups:
+    - age:
+      - *admin_incogshift
