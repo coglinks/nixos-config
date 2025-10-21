@@ -2,6 +2,7 @@
 {
   imports = [
     ../secrets
+    ./openssh.nix
     ./winapps
     ./gotenberg.nix
     ./fonts.nix
