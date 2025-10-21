@@ -111,7 +111,7 @@
         ];
         open-pdf = [
           {
-            run = ''zathura $@ &'';
+            run = "zathura \"$@\" &";
             desc = "Open PDF";
             orphan = true;
             block = false;
@@ -120,7 +120,7 @@
         ];
         program-chooser = [
           {
-            run = ''program-chooser $@'';
+            run = "program-chooser \"$@\"";
             desc = "program-chooser";
             orphan = true;
             block = false;
