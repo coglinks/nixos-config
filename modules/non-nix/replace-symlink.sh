@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-for link in $(find ./* -type l)
-do
-  loc="$(dirname "$link")"
-  dir="$(readlink "$link")"
-  rm "$link"
-  cp "$dir" "$loc"
-  sudo chown --reference="$HOME" -R "$link"
-  sudo chmod --reference="$HOME" -R "$link"
-done
+file="$1"
+
+cp -L "$file" /tmp/
+rm "$file"
+mv "/tmp/$(basename "$file")" .
+
+sudo chown --reference="$HOME" -R "$(basename "$file")"
+sudo chmod --reference="$HOME" -R "$(basename "$file")"
