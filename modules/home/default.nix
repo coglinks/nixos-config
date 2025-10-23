@@ -14,12 +14,11 @@
     ./flow.nix # terminal text editor
     ./thunderbird.nix
     ./fzf.nix # fuzzy finder
-    ./git.nix # version control
+    ./git # version control
     ./gnome.nix # gnome apps
     ./gtk.nix # gtk theme
     ./hyprland # window manager
     ./kitty.nix # terminal
-    ./lazygit.nix
     ./nemo.nix # file manager
     ./nvim.nix
     ./p10k/p10k.nix
