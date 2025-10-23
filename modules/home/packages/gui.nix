@@ -11,6 +11,7 @@
     davinci-resolve
     darktable
     gnome-sound-recorder
+    pdf4qt
     gthumb
     feh
     blender
