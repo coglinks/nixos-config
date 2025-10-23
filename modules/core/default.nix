@@ -14,7 +14,6 @@
     ./nix.nix
     ./qt.nix
     ./pipewire.nix
-    ./gitolite.nix
     ./program.nix
     ./taskchampion.nix
     ./security.nix
