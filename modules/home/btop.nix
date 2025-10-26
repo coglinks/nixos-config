@@ -2,6 +2,7 @@
 {
   programs.btop = {
     enable = true;
+    package = null;
 
     settings = {
       # color_theme = "TTY";
@@ -12,7 +13,7 @@
   };
 
   home.packages = with pkgs; [
-    nvtopPackages.intel
-    nvtopPackages.nvidia
+    # nvtopPackages.intel
+    # nvtopPackages.nvidia
   ];
 }
