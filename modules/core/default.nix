@@ -2,6 +2,7 @@
 {
   imports = [
     ../secrets
+    ./btop.nix
     ./openssh.nix
     ./winapps
     ./gotenberg.nix
