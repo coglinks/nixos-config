@@ -25,7 +25,6 @@ in
 
         "[workspace 1] ${browser}"
         "[workspace 8 silent ] ${terminal}"
-        "[workspace 9 silent ] missioncenter"
 
         "gnome-keyring-daemon --start --components=secrets,ssh"
         "systemctl --user start hyprpolkitagent"
