@@ -25,6 +25,7 @@ in
 
         "[workspace 1] ${browser}"
         "[workspace 8 silent ] ${terminal}"
+        "[workspace 9 silent ] kitty sh -c 'btop'"
 
         "gnome-keyring-daemon --start --components=secrets,ssh"
         "systemctl --user start hyprpolkitagent"
