@@ -1,9 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 
 {
   services.gitolite = {
     enable = true;
-    adminPubKey = null;
+    adminPubkey = "SHA256:wy9wjAa06+AySFmduIxgDXPsvAQP45GFsjX3EuK9zNs incogshift@laptop";
     enableGitAnnex = true;
   };
 }
