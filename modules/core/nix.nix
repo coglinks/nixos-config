@@ -7,6 +7,8 @@
   #  inherit (pkgs.stdenv.hostPlatform) system;
   #  inherit (config.nixpkgs) config;
   #};
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   nix.settings = {
     # max-jobs = 3;
     # cores = 4;
