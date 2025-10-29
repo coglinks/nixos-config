@@ -18,5 +18,9 @@
       gcr
       gnome-settings-daemon
     ];
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "both";
+    };
   };
 }
