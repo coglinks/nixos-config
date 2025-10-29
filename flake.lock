@@ -1186,6 +1186,7 @@
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur",
+        "secrets": "secrets",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "waybar": "waybar",
@@ -1233,6 +1234,19 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "secrets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761707708,
+        "narHash": "sha256-phTVgt0gueZLobnLtbvoxpI3T4vfrFFho6Et3loo80Q=",
+        "path": "/inc/remotes/secrets",
+        "type": "path"
+      },
+      "original": {
+        "path": "/inc/remotes/secrets",
+        "type": "path"
       }
     },
     "sops-nix": {

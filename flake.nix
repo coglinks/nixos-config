@@ -2,6 +2,11 @@
   description = "FrostPhoenix's nixos configuration";
 
   inputs = {
+    secrets = {
+      url = "path:/inc/remotes/secrets";
+      flake = false;
+    };
+
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     lanzaboote = {
