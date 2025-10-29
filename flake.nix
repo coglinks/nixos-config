@@ -9,6 +9,12 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -86,6 +92,7 @@
     {
       nixpkgs,
       self,
+      nix-on-droid,
       yazi,
       ...
     }@inputs:
@@ -147,5 +154,10 @@
           };
         };
       };
+      nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+        pkgs = import nixpkgs { system = "aarch64-linux"; };
+        modules = [ ./hosts/nix-on-droid ];
+      };
+
     };
 }
