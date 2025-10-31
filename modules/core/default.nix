@@ -2,6 +2,7 @@
 {
   imports = [
     ../secrets
+    ./lfs-test-server.nix
     ./btop.nix
     ./openssh.nix
     ./winapps
