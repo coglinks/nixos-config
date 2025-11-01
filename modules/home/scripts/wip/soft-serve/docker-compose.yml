@@ -1,0 +1,15 @@
+---
+services:
+  soft-serve:
+    image: charmcli/soft-serve:latest
+    container_name: soft-serve
+    volumes:
+      - /inc/programs/soft-serve/data:/soft-serve
+    ports:
+      - 23231:23231
+      - 23232:23232
+      - 23233:23233
+      - 9418:9418
+    environment:
+      SOFT_SERVE_INITIAL_ADMIN_KEYS: "<password>"
+    restart: unless-stopped
