@@ -1,4 +1,4 @@
-{ ... }:
+{ username, inputs, ... }:
 {
   programs.ssh = {
     enable = true;
@@ -13,6 +13,18 @@
         identityFile = "~/.ssh/id_github";
         identitiesOnly = true;
         addKeysToAgent = "1h";
+        controlMaster = "auto";
+        controlPath = "~/.ssh/control-%r@%h:%p";
+        controlPersist = "10m";
+      };
+      soft-serve = {
+        host = "soft-serve";
+        hostname = builtins.readFile "${inputs.secrets}/hosts/laptop";
+        user = username;
+        port = 23231;
+        identityFile = "~/.ssh/${username}";
+        identitiesOnly = true;
+        addKeysToAgent = "yes";
         controlMaster = "auto";
         controlPath = "~/.ssh/control-%r@%h:%p";
         controlPersist = "10m";
