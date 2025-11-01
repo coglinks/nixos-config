@@ -6,13 +6,12 @@
 
     matchBlocks = {
       github = {
-        host = "github.com";
-        hostname = "ssh.github.com";
+        host = "cog-github";
+        hostname = "github.com";
         user = "git";
-        port = 443;
         identityFile = "~/.ssh/id_github";
         identitiesOnly = true;
-        addKeysToAgent = "1h";
+        addKeysToAgent = "yes";
         controlMaster = "auto";
         controlPath = "~/.ssh/control-%r@%h:%p";
         controlPersist = "10m";
