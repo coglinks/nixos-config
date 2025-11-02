@@ -1,33 +1,31 @@
 #!/usr/bin/env bash
 
+# Note this is the ai generated version of ./marker.sh
+
 pdf=$1
 no_of_pages=$2
 
 split=1
 start_number=0
-end_number=5
+end_number=$(($start_number + 5))
 
-# Number pattern
-# 0 - 5
-# 6 - 10
-# 11 - 15
-# 16 - 20
+while [ $start_number -le "$no_of_pages" ]; do
+  out="../my-notes/convert/$pdf/split-$split"
+  mkdir -p "$out"
 
-out="../my-notes/convert/$pdf/split-$split"
+  # Adjust end_number if it exceeds total pages
+  if [ $end_number -gt "$no_of_pages" ]; then
+    end_number=$no_of_pages
+  fi
 
-while [ $end_number -le "$no_of_pages" ]; do
-  # echo "$start_number - $end_number"
-  cat <<EOF
+  echo "Processing pages $start_number-$end_number -> $out"
 
-    mkdir -p $out
-
-    marker_single \
-      $pdf \
-      --page_range "$start_number-$end_number" \
-      --paginate_output \
-      --output_format markdown \
-      --output_dir $out
-EOF
+  marker_single \
+    "$pdf" \
+    --page_range "$start_number-$end_number" \
+    --paginate_output \
+    --output_format markdown \
+    --output_dir "$out"
 
   ((split++))
   ((start_number = end_number + 1))
