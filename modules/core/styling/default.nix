@@ -9,6 +9,7 @@
   imports = [ inputs.stylix.nixosModules.stylix ];
   stylix = {
     enable = true;
+    autoEnable = false;
     base16Scheme = ./assets/dark-palette.yaml;
     fonts = {
       monospace = {

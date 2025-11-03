@@ -2,6 +2,6 @@
 
 {
   import = [
-    ./qgnomeplatform.nix
+    # ./qgnomeplatform.nix
   ];
 }
