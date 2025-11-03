@@ -38,4 +38,5 @@
       "ctrl+shift+right" = "no_op";
     };
   };
+  stylix.targets.kitty.enable = true;
 }
