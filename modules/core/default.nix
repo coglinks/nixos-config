@@ -2,6 +2,7 @@
 {
   imports = [
     ../secrets
+    ./fish.nix
     ./btop.nix
     ./openssh.nix
     ./winapps
