@@ -118,7 +118,6 @@
             host = "laptop";
             inherit
               self
-              pkgs
               inputs
               username
               system
