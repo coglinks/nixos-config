@@ -1,14 +1,14 @@
 { pkgs, ... }:
 {
   programs.bat = {
-    enable = false;
+    enable = true;
     config = {
       pager = "less -FR";
     };
     extraPackages = with pkgs.bat-extras; [
-      batman
-      batpipe
-      batgrep
+      # batman
+      # batpipe
+      # batgrep
       # batdiff
     ];
   };
