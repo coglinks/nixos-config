@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./services
     ../secrets
     ./fish.nix
     ./btop.nix
