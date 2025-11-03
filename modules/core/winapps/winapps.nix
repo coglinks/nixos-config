@@ -1,13 +1,12 @@
 {
   inputs,
   pkgs,
-  system,
   ...
 }:
 {
   environment.systemPackages = [
-    inputs.winapps.packages.${system}.winapps
-    inputs.winapps.packages.${system}.winapps-launcher # optional
+    inputs.winapps.packages.${pkgs.stdenv.hostPlatform.system}.winapps
+    inputs.winapps.packages.${pkgs.stdenv.hostPlatform.system}.winapps-launcher # optional
     pkgs.curl
     pkgs.dialog
     pkgs.freerdp

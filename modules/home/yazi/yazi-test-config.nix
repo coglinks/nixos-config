@@ -7,7 +7,7 @@
 {
   programs.yazi = {
     enable = true;
-    # package = yazi.packages.${pkgs.system}.default;
+    # package = yazi.packages.${pkgs.stdenv.hostPlatform.system}.default;
     package = pkgs.yazi;
     settings = {
       opener = {
