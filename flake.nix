@@ -110,6 +110,7 @@
           inherit system;
           modules = [
             inputs.sops-nix.nixosModules.sops
+            inputs.stylix.nixosModules.stylix
             ./hosts/laptop
             ./overlays
           ];
@@ -128,6 +129,7 @@
           inherit system;
           modules = [
             inputs.sops-nix.nixosModules.sops
+            inputs.stylix.nixosModules.stylix
             ./hosts/vm
             ./overlays
           ];
@@ -145,7 +147,11 @@
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         pkgs = import nixpkgs { system = "aarch64-linux"; };
 
-        modules = [ ./hosts/nix-on-droid ];
+        modules = [
+          inputs.sops-nix.nixosModules.sops
+          inputs.stylix.nixosModules.stylix
+          ./hosts/nix-on-droid
+        ];
 
         extraSpecialArgs = {
           username = "nix-on-droid";
