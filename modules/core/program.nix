@@ -23,5 +23,6 @@
     _7zz-rar
     fd
     ueberzugpp
+    bitwarden-cli
   ];
 }
