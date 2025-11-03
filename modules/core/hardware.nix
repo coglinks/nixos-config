@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  hyprland-pkgs =
-    inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  hyprland-pkgs = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   hardware = {
@@ -10,8 +9,8 @@ in
       package = hyprland-pkgs.mesa;
       extraPackages = with pkgs; [
         intel-media-driver
-        (vaapiIntel.override { enableHybridCodec = true; })
-        vaapiVdpau
+        (intel-vaapi-driver.override { enableHybridCodec = true; })
+        libva-vdpau-driver
         libvdpau-va-gl
       ];
     };
