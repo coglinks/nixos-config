@@ -2,7 +2,6 @@
   pkgs,
   system,
   inputs,
-  config,
   username,
   host,
   ...

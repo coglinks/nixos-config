@@ -1,11 +1,6 @@
 { pkgs, inputs, ... }:
 {
   # imports = [ inputs.nix-gaming.nixosModules.default ];
-  nix = {
-  };
-  nixpkgs = {
-    overlays = [ inputs.nur.overlays.default ];
-  };
 
   environment.systemPackages = with pkgs; [
     wget
