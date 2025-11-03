@@ -8,7 +8,7 @@
 {
   stylix = {
     enable = true;
-    autoEnable = false;
+    autoEnable = true;
     base16Scheme = ./assets/dark-palette.yaml;
     fonts = {
       monospace = {
