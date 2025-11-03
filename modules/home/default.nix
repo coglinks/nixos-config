@@ -15,7 +15,6 @@
     ./thunderbird.nix
     ./fzf.nix # fuzzy finder
     ./git # version control
-    ./gnome.nix # gnome apps
     ./gtk.nix # gtk theme
     ./hyprland # window manager
     ./kitty.nix # terminal

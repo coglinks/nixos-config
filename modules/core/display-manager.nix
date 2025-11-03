@@ -9,7 +9,7 @@
     extraPackages = [ pkgs.sddm-astronaut ];
   };
 
-  environment.systemPackages = with pkgs; [sddm-astronaut];
+  environment.systemPackages = with pkgs; [ sddm-astronaut ];
 
   # backup DE
   services.desktopManager.gnome.enable = true;

@@ -3,6 +3,11 @@
   imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
 
   home.packages = with pkgs; [
+    #misc
+    evince # pdf
+    file-roller # archive
+    gnome-text-editor # gedit
+
     ## Multimedia
     kodi-wayland
     audacity
