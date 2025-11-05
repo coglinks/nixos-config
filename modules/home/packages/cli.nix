@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    ## misc
+    conda
+
     ## Better core utils
     duf # disk information
     eza # ls replacement
