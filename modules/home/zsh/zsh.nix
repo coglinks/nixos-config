@@ -141,6 +141,7 @@
             # bash
             ''
               export PATH=/usr/local/bin:$PATH
+              export PATH=$HOME/.local/bin:$PATH
 
               url() {
                   local link="$1"
