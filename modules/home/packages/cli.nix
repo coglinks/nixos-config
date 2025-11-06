@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     ## misc
     conda
+    chezmoi
 
     ## Better core utils
     duf # disk information
