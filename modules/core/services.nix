@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   services = {
+    scanservjs.enable = true;
     jellyfin = {
       enable = true;
       openFirewall = true;
