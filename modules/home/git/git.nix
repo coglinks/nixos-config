@@ -3,13 +3,15 @@
   programs.git = {
     enable = true;
 
-    userName = "coglinks";
-    userEmail = "103402972+coglinks@users.noreply.github.com";
     signing = {
       key = "0FA54B4EDF6CE0E9";
       signByDefault = true;
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "coglinks";
+        email = "103402972+coglinks@users.noreply.github.com";
+      };
       init.defaultBranch = "main";
       merge.conflictstyle = "diff3";
       diff.colorMoved = "default";
@@ -18,23 +20,12 @@
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
 
       credential.helper = "${pkgs.git.override { withLibsecret = true; }}/bin/git-credential-libsecret";
-    };
 
-    delta = {
-      enable = true;
-      options = {
-        line-numbers = true;
-        side-by-side = false;
-        diff-so-fancy = true;
-        navigate = true;
+      aliases = {
+        apply-gitignore = "!git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached";
       };
     };
-
     lfs.enable = true;
-
-    aliases = {
-      apply-gitignore = "!git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached";
-    };
   };
 
   home.packages = with pkgs; [
