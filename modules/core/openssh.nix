@@ -1,6 +1,10 @@
 { username, ... }:
 
 {
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+  # services.ssh-agent.enable = true;
+
   services.openssh = {
     enable = true;
     ports = [ 22 ];
