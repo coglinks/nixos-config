@@ -29,6 +29,7 @@
   };
 
   home.packages = with pkgs; [
+    keychain
     git-annex
     git-crypt
     gh
