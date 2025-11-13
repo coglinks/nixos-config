@@ -13,6 +13,7 @@
     audacity
     gimp
     inkscape
+    inkscape-extensions.textext
     davinci-resolve
     darktable
     gnome-sound-recorder
