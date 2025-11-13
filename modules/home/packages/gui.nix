@@ -12,8 +12,9 @@
     kodi-wayland
     audacity
     gimp
-    inkscape
-    inkscape-extensions.textext
+    (inkscape-with-extensions.override {
+      inkscapeExtensions = with inkscape-extensions; [ textext ];
+    })
     davinci-resolve
     darktable
     gnome-sound-recorder
