@@ -142,18 +142,7 @@
             ''
               export PATH=/usr/local/bin:$PATH
               export PATH=$HOME/.local/bin:$PATH
-
-              url() {
-                  local link="$1"
-                  local name="$2"
-                  local filepath="./''${name}.url"
-
-                  echo "[InternetShortcut]
-              URL=''${link}" > "$filepath"
-
-                  chmod +x "$filepath"
-                  echo "Shortcut created: $filepath"
-              }
+              source ~/shell/zsh/.zshrc
             '';
         zshConfigLateInit =
           lib.mkOrder 1500
