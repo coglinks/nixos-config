@@ -1,5 +1,33 @@
 { pkgs, lib, ... }:
 {
+<<<<<<< HEAD
+||||||| 7b9b95fa
+  fonts.fontconfig.enable = true;
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.symbols-only
+    twemoji-color-font
+    noto-fonts-emoji
+    fantasque-sans-mono
+    maple-mono.truetype-autohint
+  ];
+
+=======
+  fonts.fontconfig.enable = true;
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
+    nerd-fonts.caskaydia-cove
+    nerd-fonts.symbols-only
+    twemoji-color-font
+    noto-fonts-color-emoji
+    fantasque-sans-mono
+    maple-mono-custom
+  ];
+
+>>>>>>> refs/remotes/foundation/main
   gtk = {
     enable = true;
     font = {
@@ -20,7 +48,13 @@
     # };
     iconTheme = {
       name = "Papirus-Dark";
+<<<<<<< HEAD
       package = pkgs.papirus-icon-theme;
+||||||| 7b9b95fa
+      package = pkgs.papirus-icon-theme.override { color = "black"; };
+=======
+      package = pkgs.papirus-icon-theme.override { color = "green"; };
+>>>>>>> refs/remotes/foundation/main
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";

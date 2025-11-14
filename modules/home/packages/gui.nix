@@ -12,6 +12,7 @@
     kodi-wayland
     audacity
     gimp
+<<<<<<< HEAD
     (inkscape-with-extensions.override {
       inkscapeExtensions = with inkscape-extensions; [ textext ];
     })
@@ -22,6 +23,10 @@
     gthumb
     feh
     blender
+||||||| 7b9b95fa
+=======
+    media-downloader
+>>>>>>> refs/remotes/foundation/main
     obs-studio
     pavucontrol
     soundwireserver

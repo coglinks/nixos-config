@@ -1,13 +1,27 @@
+<<<<<<< HEAD
 { inputs, pkgs, lib, ... }:
+||||||| 7b9b95fa
+{ inputs, pkgs, ... }:
+=======
+{ pkgs, ... }:
+>>>>>>> refs/remotes/foundation/main
 {
   home.packages = with pkgs; [
     swww
+<<<<<<< HEAD
     hyprpolkitagent
     inputs.hypr-contrib.packages.${pkgs.stdenv.hostPlatform.system}.grimblast
     inputs.hyprpicker.packages.${pkgs.stdenv.hostPlatform.system}.hyprpicker
     gradia
     # nwg-displays
     copyq
+||||||| 7b9b95fa
+    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+    inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+=======
+    grimblast
+    hyprpicker
+>>>>>>> refs/remotes/foundation/main
     grim
     slurp
     wlogout

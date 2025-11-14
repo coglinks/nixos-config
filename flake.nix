@@ -8,6 +8,7 @@
     };
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nur.url = "github:nix-community/NUR";
 
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid";
@@ -24,6 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+<<<<<<< HEAD
     hyprland.url = "github:hyprwm/Hyprland";
 
     hypr-contrib = {
@@ -75,16 +77,75 @@
 
     nur.url = "github:nix-community/NUR";
 
-    nix-gaming.url = "github:fufexan/nix-gaming";
+||||||| 7b9b95fa
+    hyprland.url = "github:hyprwm/Hyprland";
 
+    hypr-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+      inputs.nixpkgs.follows = "hyprland/nixpkgs";
+    };
+
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs = {
+        hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprlang.follows = "hyprland/hyprlang";
+        hyprutils.follows = "hyprland/hyprutils";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
+      };
+    };
+
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs = {
+        hyprland = {
+          follows = "hyprland";
+        };
+      };
+    };
+
+    waybar.url = "github:Alexays/Waybar";
+
+    nur.url = "github:nix-community/NUR";
+=======
+>>>>>>> refs/remotes/foundation/main
+    nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
+<<<<<<< HEAD
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+||||||| 7b9b95fa
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+=======
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+>>>>>>> refs/remotes/foundation/main
 
+<<<<<<< HEAD
     yazi.url = "github:sxyazi/yazi/nightly";
+||||||| 7b9b95fa
+    ghostty.url = "github:ghostty-org/ghostty";
+=======
+    maple-mono = {
+      url = "github:subframe7536/maple-font/variable";
+      flake = false;
+    };
+
+    superfile.url = "github:yorukot/superfile";
+    vicinae.url = "github:vicinaehq/vicinae";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake/beta";
+>>>>>>> refs/remotes/foundation/main
   };
 
   outputs =

@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+<<<<<<< HEAD
     ./services
     ../secrets
     ./shells
@@ -10,6 +11,12 @@
     ./gotenberg.nix
     ./fonts.nix
     ./docker.nix
+||||||| 7b9b95fa
+    ./bootloader.nix
+=======
+    ./nixpkgs.nix
+    ./bootloader.nix
+>>>>>>> refs/remotes/foundation/main
     ./hardware.nix
     ./network.nix
     ./nh.nix
