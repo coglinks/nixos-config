@@ -23,7 +23,7 @@
     ./system.nix
     ./flatpak.nix
     ./user.nix
-    ./styling
+    ./stylix
     ./virtualization.nix
   ];
 }
