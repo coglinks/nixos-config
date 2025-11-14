@@ -2,6 +2,7 @@
 {
   imports = [
     ./audacious.nix # music player
+    ./hledger.nix
     ./sops.nix
     ./activitywatch.nix
     ./bat.nix # better cat command
