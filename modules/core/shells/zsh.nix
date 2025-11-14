@@ -10,7 +10,7 @@
     enable = true;
     enableCompletion = true;
     enableBashCompletion = true;
-    autosuggestion.enable = true;
+    autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
   };
 }

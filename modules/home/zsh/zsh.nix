@@ -2,7 +2,6 @@
 {
   programs.zsh = {
     enable = true;
-    package = null;
 
     plugins = [
       {
@@ -14,6 +13,11 @@
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "zsh-completions";
+        src = pkgs.zsh-completions;
+        file = "share/zsh-completions/zsh-completions.zsh";
       }
     ];
 
