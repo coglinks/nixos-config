@@ -3,7 +3,7 @@
   imports = [
     ./services
     ../secrets
-    ./fish.nix
+    ./shells
     ./btop.nix
     ./openssh.nix
     ./winapps
