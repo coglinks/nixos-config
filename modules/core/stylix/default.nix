@@ -9,7 +9,8 @@
   stylix = {
     enable = true;
     autoEnable = true;
-    base16Scheme = ./assets/dark-palette.yaml;
+    # base16Scheme = ./assets/dark-palette.yaml;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/black-metal-khold.yaml";
     fonts = {
       monospace = {
         package = pkgs.maple-mono.truetype-autohint;
