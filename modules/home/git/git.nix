@@ -26,7 +26,6 @@
         apply-gitignore = "!git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached";
       };
     };
-    lfs.enable = true;
   };
 
   home.packages = with pkgs; [
