@@ -19,6 +19,7 @@
   programs.nix-ld.libraries = with pkgs; [ ];
   environment.systemPackages = with pkgs; [
     wl-clipboard
+    borgbackup
     refind
     _7zz-rar
     fd
