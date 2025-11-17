@@ -3,6 +3,8 @@
   home.packages = with pkgs; [
     ## misc
     conda
+    pdftk
+    quarto
     chezmoi
 
     ## Better core utils
