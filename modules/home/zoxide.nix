@@ -1,4 +1,8 @@
+{ ... }:
+
+{
   programs.zoxide = {
-    enable = true
+    enable = true;
+    enableNushellIntegration = true;
   };
 }
