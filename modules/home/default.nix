@@ -13,6 +13,7 @@
     ./discord.nix # discord
     ./fastfetch.nix # fetch tool
     ./flow.nix # terminal text editor
+    ./zoxide.nix
     ./thunderbird.nix
     ./fzf.nix # fuzzy finder
     ./git # version control
@@ -34,7 +35,6 @@
     # ./viewnior.nix                    # image viewer
     ./waybar # status bar
     ./waypaper.nix # GUI wallpaper picker
-    ./xdg-mimes.nix # xdg config
     ./zathura.nix
     ./zsh # shell
   ];
