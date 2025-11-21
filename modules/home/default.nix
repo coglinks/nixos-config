@@ -2,6 +2,7 @@
 {
   imports = [
     ./audacious.nix # music player
+    ./nushell.nix
     ./hledger.nix
     ./sops.nix
     ./activitywatch.nix
