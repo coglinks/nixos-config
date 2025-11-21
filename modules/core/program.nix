@@ -5,7 +5,6 @@
   programs.nano.enable = false;
   programs.vim = {
     enable = true;
-    defaultEditor = true;
   };
   programs.yazi = {
     enable = true;

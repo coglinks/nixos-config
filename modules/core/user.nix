@@ -32,18 +32,32 @@
     backupFileExtension = "hm-backup";
   };
 
-  users.users.${username} = {
-    isNormalUser = true;
-    # doesnt work for some reason
-    # hashedPasswordFile = config.sops.secrets.my-password.path;
-    initialPassword = "test";
-    description = "${username}";
-    extraGroups = [
-      "networkmanager"
-      "kvm"
-      "wheel"
-    ];
-    shell = pkgs.fish;
+  users.users = {
+    ${username} = {
+      isNormalUser = true;
+      # doesnt work for some reason
+      # hashedPasswordFile = config.sops.secrets.my-password.path;
+      initialPassword = "test";
+      description = "${username}";
+      extraGroups = [
+        "networkmanager"
+        "kvm"
+        "wheel"
+      ];
+      shell = pkgs.nushell;
+    };
   };
-  nix.settings.allowed-users = [ "${username}" ];
+    nix.settings.allowed-users = [ "${username}" ];
+
+    users.defaultUserShell = pkgs.nushell;
+
+    environment = {
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+    shells = [
+      pkgs.nushell
+    ];
+  };
+
 }
