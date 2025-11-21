@@ -196,8 +196,4 @@
         zshConfigLateInit
       ];
   };
-
-  programs.zoxide = {
-    enable = true;
-  };
 }
