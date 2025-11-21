@@ -1,5 +1,8 @@
 { pkgs, config, ... }:
 
+let
+  taskopen = pkgs.callPackage ../../pkgs/taskopen/default.nix { };
+in
 {
   sops = {
     secrets."taskwarrior/lenovo-loq/client_id" = { };
@@ -28,5 +31,6 @@
   home.packages = with pkgs; [
     timewarrior
     taskwarrior-tui
+    taskopen
   ];
 }
