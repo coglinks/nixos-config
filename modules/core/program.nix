@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   programs.dconf.enable = true;
   programs.zsh.enable = true;
@@ -24,5 +24,6 @@
     fd
     ueberzugpp
     bitwarden-cli
+    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
   ];
 }
