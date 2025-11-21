@@ -4,6 +4,7 @@
     ## misc
     conda
     pdftk
+    starship
     quarto
     chezmoi
 
