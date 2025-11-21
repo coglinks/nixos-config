@@ -12,7 +12,6 @@
     ./cava.nix # audio visualizer
     ./discord.nix # discord
     ./fastfetch.nix # fetch tool
-    ./firefox.nix
     ./flow.nix # terminal text editor
     ./thunderbird.nix
     ./fzf.nix # fuzzy finder

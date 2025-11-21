@@ -5,6 +5,7 @@
   home.packages = with pkgs; [
     #misc
     evince # pdf
+    firefox
     file-roller # archive
     gnome-text-editor # gedit
 
