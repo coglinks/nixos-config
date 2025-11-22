@@ -28,9 +28,10 @@ in
     enable = true;
   };
 
-  home.packages = with pkgs; [
-    timewarrior
-    taskwarrior-tui
+  # not sure if i can use with syntax over here
+  home.packages = [
     taskopen
+    pkgs.timewarrior
+    pkgs.taskwarrior-tui
   ];
 }
