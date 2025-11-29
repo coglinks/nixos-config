@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  options,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   programs.dconf.enable = true;
   programs.zsh.enable = true;
@@ -14,8 +19,12 @@
     enableSSHSupport = true;
     # pinentryFlavor = "";
   };
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [ ];
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      glib # libglib-2.0.so.0, libgthread-2.0.so.0
+    ];
+  };
   environment.systemPackages = with pkgs; [
     wl-clipboard
     borgbackup
