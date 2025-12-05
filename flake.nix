@@ -105,6 +105,8 @@
       lib = nixpkgs.lib;
     in
     {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+
       nixosConfigurations = {
         laptop = nixpkgs.lib.nixosSystem {
           inherit system;
