@@ -47,11 +47,11 @@
       shell = pkgs.nushell;
     };
   };
-    nix.settings.allowed-users = [ "${username}" ];
+  nix.settings.allowed-users = [ "${username}" ];
 
-    users.defaultUserShell = pkgs.nushell;
+  users.defaultUserShell = pkgs.nushell;
 
-    environment = {
+  environment = {
     sessionVariables = {
       EDITOR = "nvim";
     };

@@ -1,4 +1,9 @@
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 {
   home.packages = with pkgs; [
     swww
@@ -33,6 +38,6 @@
     extraConfig = lib.mkOrder 1500 ''
       source = ./monitors.conf
       source = ./workspaces.conf
-      '';
+    '';
   };
 }

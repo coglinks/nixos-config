@@ -5,21 +5,22 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
-  in {
-    devShells.${system}.default = pkgs.mkShell {
-/*
-      ENVIRONMENT_VARIABLE = "SOMTHING";
-*/
+  outputs =
+    { self, nixpkgs }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      devShells.${system}.default = pkgs.mkShell {
+        # ENVIRONMENT_VARIABLE = "SOMTHING";
 
-      packages = with pkgs; [
-      ];
+        packages = with pkgs; [
+        ];
 
-      shellHook = ''
-        exec fish
-      '';
+        shellHook = ''
+          exec fish
+        '';
+      };
     };
-  };
 }

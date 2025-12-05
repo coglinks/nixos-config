@@ -2,21 +2,23 @@
 
 {
   programs.yazi = {
-    plugins = { git = pkgs.yaziPlugins.git; };
+    plugins = {
+      git = pkgs.yaziPlugins.git;
+    };
     initLua = ''
       require("git"):setup()
     '';
     settings = {
       plugin.prepend_fetchers = [
         {
-          id   = "git";
+          id = "git";
           name = "*";
-          run  = "git";
+          run = "git";
         }
         {
-          id   = "git";
+          id = "git";
           name = "*/";
-          run  = "git";
+          run = "git";
         }
       ];
     };

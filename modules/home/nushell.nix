@@ -2,13 +2,13 @@
 
 {
   programs.nushell = {
-    enable= true;
+    enable = true;
     plugins = with pkgs.nushellPlugins; [
-  polars
-  gstat
-  formats
-  query
-  ];
+      polars
+      gstat
+      formats
+      query
+    ];
     extraConfig = ''
       source ~/.config/nushell/config-extra.nu
     '';

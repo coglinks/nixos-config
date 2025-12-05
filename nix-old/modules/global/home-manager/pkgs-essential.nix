@@ -1,8 +1,13 @@
-{ pkgs, pkgs-stable, config, ... }:
+{
+  pkgs,
+  pkgs-stable,
+  config,
+  ...
+}:
 
 {
   home.packages = with pkgs-stable; [
-    bat # cli #text-viewer #cat-with-syntax-highlighting 
+    bat # cli #text-viewer #cat-with-syntax-highlighting
     killall
     rclone
     nixd

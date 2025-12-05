@@ -18,7 +18,7 @@
     ./modules/devices/loq
   ];
 
-# What follows is base system setup
+  # What follows is base system setup
 
   # Set your time zone.
   time.timeZone = "Asia/Qatar";

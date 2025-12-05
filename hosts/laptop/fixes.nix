@@ -11,7 +11,7 @@
           main = {
             "leftshift+leftmeta+f23" = "rightcontrol";
           };
-          otherlayer = {};
+          otherlayer = { };
         };
       };
     };

@@ -2,7 +2,9 @@
 
 {
   programs.yazi = {
-    plugins = { restore = pkgs.yaziPlugins.restore; };
+    plugins = {
+      restore = pkgs.yaziPlugins.restore;
+    };
     keymap = {
       mgr.prepend_keymap = [
         {
