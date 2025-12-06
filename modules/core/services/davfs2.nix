@@ -1,3 +1,4 @@
+# Adapted from https://blog.tiserbox.com/posts/2024-02-23-mounting-webdav-folder-in-nix-os.html
 { lib, inputs, ... }:
 
 {
