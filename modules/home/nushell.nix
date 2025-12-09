@@ -6,6 +6,7 @@
     plugins = with pkgs.nushellPlugins; [
       polars
       gstat
+      desktop_notifications
       formats
       query
     ];
