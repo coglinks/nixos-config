@@ -41,7 +41,7 @@ in
 
         # image.nvim setup
 
-        set -g allow-passthrough on
+        set -gq allow-passthrough on
         set -g visual-activity off
 
         ## plugin setups
