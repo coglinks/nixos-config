@@ -72,7 +72,16 @@
           "gzip"
         ]}
 
-        source ~/.config/nushell/config-extra.nu
+        # Plugins
+        overlay use ${
+          pkgs.fetchFromGitHub {
+            owner = "KamilKleina";
+            repo = "alias-finder.nu";
+            rev = "952658bb51116c255d0c6463b602b24426d5ef90";
+            hash = "sha256-3IBIyrnIFzjYzxtUYFsQeMeP0S/t7IU6ZF428lAwScw=";
+          }
+          + /alias-finder.nu
+        }
 
         def ll [] { ls -l | select name mode user group size modified}
         def l [] { ls -al | select name mode user group size modified}
@@ -94,6 +103,26 @@
               xargs -I{} hyprctl dispatch focuswindow "title:{}"
           }
         }
+
+        def nufzf [] {
+          $in | each {|i| $i | to json --raw}
+              | str join "\n"
+              | fzf -m
+              | lines
+              | each {$in | from json}
+              | reduce {|it, acc| $acc | append $it }
+        }
+
+        $env.Path = ($env.Path
+          | append '~/.local/bin'
+          | append '~/.config/nixCats-nvim/result/bin'
+        )
       '';
+    environmentVariables = {
+      EDITOR = "nvim";
+      config.buffer_editor = "nvim";
+      config.edit_mode = "vi";
+      config.show_banner = false;
+    };
   };
 }
