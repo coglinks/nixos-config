@@ -7,6 +7,7 @@
     package = inputs.yazi.packages.${pkgs.stdenv.hostPlatform.system}.default;
     enableZshIntegration = true;
     enableBashIntegration = true;
+    enableNushellIntegration = true;
     plugins = {
       sudo = pkgs.yaziPlugins.sudo;
     };
