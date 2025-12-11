@@ -1,7 +1,7 @@
-{ inputs, system, ... }:
+{ inputs, pkgs, ... }:
 
 {
   environment.systemPackages = [
-    inputs.adw-bluetooth.packages.${system}.default
+    inputs.adw-bluetooth.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }
