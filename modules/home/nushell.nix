@@ -12,7 +12,14 @@
     ];
     extraConfig =
       let
-        aliases = "${pkgs.nu_scripts}/share/nu_scripts/aliases";
+        aliases =
+          let
+            alias = name: ''
+              source ${pkgs.nu_scripts}/share/nu_scripts/aliases/${name}/${name}-aliases.nu
+            '';
+          in
+          names: builtins.foldl' (prev: str: "${prev}\n${str}") "" (map alias names);
+
         completions =
           let
             completion = name: ''
@@ -30,18 +37,13 @@
           names: builtins.foldl' (prev: str: "${prev}\n${str}") "" (map autogen names);
       in
       ''
-        def ll [] { ls -l | select name mode user group size modified}
-        def l [] { ls -al | select name mode user group size modified}
+        # nu_scripts aliases
+        ${aliases [
+          "git"
+          "chezmoi"
+        ]}
 
-        def --env mkcd [folder: path] {
-          mkdir $folder
-          cd $folder
-        }
-
-        # nu_scrips aliases
-        use ${aliases}/git/git-aliases.nu *
-
-        # nu_scrips custom-completions
+        # nu_scripts custom-completions
         ${completions [
           "git"
           "nix"
@@ -69,7 +71,29 @@
           "rsync"
           "gzip"
         ]}
+
         source ~/.config/nushell/config-extra.nu
+
+        def ll [] { ls -l | select name mode user group size modified}
+        def l [] { ls -al | select name mode user group size modified}
+
+        def --env mkcd [folder: path] {
+          mkdir $folder
+          cd $folder
+        }
+
+        def "nt" [ ] {
+
+        notify-send --action 'y=Focus Window' test |
+          if $in == "y" {
+            hyprctl clients -j |
+              from json |
+              where workspace.id == 8 |
+              where class == kitty |
+              get title.0 |
+              xargs -I{} hyprctl dispatch focuswindow "title:{}"
+          }
+        }
       '';
   };
 }
