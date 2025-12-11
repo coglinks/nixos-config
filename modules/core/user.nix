@@ -2,6 +2,7 @@
   pkgs,
   system,
   inputs,
+  pkgs-custom,
   username,
   host,
   ...
@@ -18,6 +19,7 @@
       inherit
         inputs
         username
+        pkgs-custom
         host
         system
         ;

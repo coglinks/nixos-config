@@ -9,6 +9,10 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    custom-nixpkgs = {
+      url = "github:coglinks/nixpkgs/inc";
+    };
+
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -95,6 +99,7 @@
   outputs =
     {
       nixpkgs,
+      custom-nixpkgs,
       self,
       nix-on-droid,
       yazi,
@@ -103,6 +108,10 @@
     let
       username = "incogshift";
       system = "x86_64-linux";
+      pkgs-custom = import custom-nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -126,6 +135,7 @@
             inherit
               self
               inputs
+              pkgs-custom
               username
               system
               yazi
@@ -145,6 +155,7 @@
             inherit
               self
               inputs
+              pkgs-custom
               username
               system
               ;
@@ -159,6 +170,17 @@
           inputs.stylix.nixosModules.stylix
           ./hosts/nix-on-droid
         ];
+
+        specialArgs = {
+          host = "vm";
+          inherit
+            self
+            inputs
+            pkgs-custom
+            username
+            system
+            ;
+        };
 
         extraSpecialArgs = {
           username = "nix-on-droid";

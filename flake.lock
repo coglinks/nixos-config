@@ -136,6 +136,22 @@
         "type": "github"
       }
     },
+    "custom-nixpkgs": {
+      "locked": {
+        "lastModified": 1765463187,
+        "narHash": "sha256-sdT1nZeU1iYe2bbNfrw49gKKcd9tbTjXN/Zu3niXMOY=",
+        "owner": "coglinks",
+        "repo": "nixpkgs",
+        "rev": "8c29fe6cdcceb5fd56de63d45885a7393a23bd73",
+        "type": "github"
+      },
+      "original": {
+        "owner": "coglinks",
+        "ref": "inc",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "firefox": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -1430,6 +1446,7 @@
     "root": {
       "inputs": {
         "adw-bluetooth": "adw-bluetooth",
+        "custom-nixpkgs": "custom-nixpkgs",
         "firefox": "firefox",
         "home-manager": "home-manager",
         "hypr-contrib": "hypr-contrib",
