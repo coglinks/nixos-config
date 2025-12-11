@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "adw-bluetooth": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1765423629,
+        "narHash": "sha256-SnFA3oMjdoFlQIAOlqA4dV+FCl7WMoEHthFFiOCp8SM=",
+        "owner": "ezratweaver",
+        "repo": "adwaita-bluetooth",
+        "rev": "f1d9f6dcbc36dafa3c86ed21d1febf9887cc183b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ezratweaver",
+        "repo": "adwaita-bluetooth",
+        "type": "github"
+      }
+    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -1409,6 +1429,7 @@
     },
     "root": {
       "inputs": {
+        "adw-bluetooth": "adw-bluetooth",
         "firefox": "firefox",
         "home-manager": "home-manager",
         "hypr-contrib": "hypr-contrib",
