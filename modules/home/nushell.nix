@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-custom, ... }:
 
 {
   programs.nushell = {
@@ -73,15 +73,7 @@
         ]}
 
         # Plugins
-        overlay use ${
-          pkgs.fetchFromGitHub {
-            owner = "KamilKleina";
-            repo = "alias-finder.nu";
-            rev = "952658bb51116c255d0c6463b602b24426d5ef90";
-            hash = "sha256-3IBIyrnIFzjYzxtUYFsQeMeP0S/t7IU6ZF428lAwScw=";
-          }
-          + /alias-finder.nu
-        }
+        overlay use ${pkgs-custom.alias-finder-nu}/share/alias-finder/alias-finder.nu
 
         def ll [] { ls -l | select name mode user group size modified}
         def l [] { ls -al | select name mode user group size modified}
