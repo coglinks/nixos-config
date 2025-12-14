@@ -72,6 +72,10 @@
           "gzip"
         ]}
 
+        # Conda integration
+        use ${pkgs.nu_scripts}/share/nu_scripts/modules/virtual_environments/nu_conda/nu_conda.nu
+        $env.nu_conda = '${pkgs.nu_scripts}/share/nu_scripts/modules/virtual_environments/nu_conda/nu_conda.nu'
+
         # Plugins
         overlay use ${pkgs-custom.alias-finder-nu}/share/alias-finder/alias-finder.nu
 
