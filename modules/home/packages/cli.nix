@@ -7,6 +7,7 @@
     starship
     quarto
     chezmoi
+    python313Packages.conda
 
     ## Better core utils
     duf # disk information
@@ -70,6 +71,7 @@
     tty-clock
 
     ## Multimedia
+    poppler-utils
     ani-cli
     imv
     lowfi
