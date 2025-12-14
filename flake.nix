@@ -13,6 +13,11 @@
       url = "github:coglinks/nixpkgs/inc";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -127,6 +132,7 @@
           modules = [
             inputs.sops-nix.nixosModules.sops
             inputs.stylix.nixosModules.stylix
+            inputs.nix-index-database.nixosModules.default
             ./hosts/laptop
             ./overlays
           ];
@@ -147,6 +153,7 @@
           modules = [
             inputs.sops-nix.nixosModules.sops
             inputs.stylix.nixosModules.stylix
+            inputs.nix-index-database.nixosModules.default
             ./hosts/vm
             ./overlays
           ];
