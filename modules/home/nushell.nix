@@ -120,8 +120,11 @@
         }
 
         $env.Path = ($env.Path
-          | append '~/.local/bin'
-          | append '~/.config/nixCats-nvim/result/bin'
+          | append [
+            '~/.local/bin',
+            '~/.config/nixCats-nvim/result/bin',
+            '~/.cargo/bin'
+          ]
         )
       '';
     environmentVariables = {
