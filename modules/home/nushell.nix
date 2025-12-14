@@ -126,6 +126,8 @@
             '~/.cargo/bin'
           ]
         )
+
+        $env.XDG_CONFIG_HOME = ($env.HOME | path join .config)
       '';
     environmentVariables = {
       EDITOR = "nvim";
