@@ -19,18 +19,23 @@
     "ahci"
     "nvme"
     "usbhid"
+    "uas"
+    "usb_storage"
+    "sd_mod"
   ];
+
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.initrd.luks.devices."nixos-root".device =
+    "/dev/disk/by-uuid/3e6d255d-3e55-4448-ad41-95e293cfff3d";
+
   fileSystems."/" = {
     device = "/dev/mapper/nixos-root";
-    fsType = "ext4";
+    fsType = "btrfs";
+    options = [ "subvol=@" ];
   };
-
-  boot.initrd.luks.devices."nixos-root".device =
-    "/dev/disk/by-uuid/0d12f070-7fe1-45ac-bbb9-e1efdca6e54f";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/29E7-0445";
@@ -41,25 +46,50 @@
     ];
   };
 
-  fileSystems."/mnt/kingston" = {
-    device = "/dev/mapper/kingston";
-    fsType = "ext4";
-  };
+  boot.initrd.luks.devices."kingston".device = "/dev/disk/by-uuid/00ddcc85-31c4-4b18-b478-d4b06790c333";
 
-  boot.initrd.luks.devices."kingston".device =
-    "/dev/disk/by-uuid/29d005dc-d213-455b-895e-34083696e8be";
+  fileSystems."/home" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
+    };
 
-  fileSystems."/jellyfin" = {
-    device = "/mnt/kingston/jellyfin";
-    fsType = "none";
-    options = [ "bind" ];
-  };
+  fileSystems."/st" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=st" ];
+    };
 
-  fileSystems."/inc" = {
-    device = "/mnt/kingston/st";
-    fsType = "none";
-    options = [ "bind" ];
-  };
+  fileSystems."/var/lib/nextcloud" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/nextcloud" ];
+    };
+
+  fileSystems."/var/lib/sbctl" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/sbctl" ];
+    };
+
+  fileSystems."/var/lib/redis-nextcloud" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/redis-nextcloud" ];
+    };
+
+  fileSystems."/var/lib/gitolite" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/gitolite" ];
+    };
+
+  fileSystems."/var/lib/taskchampion-sync-server" =
+    { device = "/dev/mapper/kingston";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/taskchampion-sync-server" ];
+    };
+
   boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/d93797fe-adbb-47a2-beeb-5ddc34e1673a";
 
   boot.resumeDevice = "/dev/mapper/swap";
