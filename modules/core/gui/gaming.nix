@@ -3,6 +3,7 @@
   imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
 
   environment.systemPackages = with pkgs; [
+    prismlauncher
     mangohud
     protonup-ng
     lumafly
