@@ -18,28 +18,28 @@
         margin-left = 0;
         margin-right = 0;
       };
-      topBar = {
-        position = "top";
-        modules-left = [
-          "hyprland/windowcount"
-          "hyprland/workspaces#2"
-        ];
-        "hyprland/windowcount" = {
-          format = " W:{}";
-        };
-        "hyprland/workspaces#2" = {
-          active-only = true;
-          disable-scroll = false;
-          format = "{icon}: {windows}";
-          workspace-taskbar = {
-            enable = true;
-            update-active-window = true;
-            format = "{icon} {title:.15}";
-          };
-          on-click = "activate";
-        };
-
-      };
+      # topBar = {
+      #   position = "top";
+      #   modules-left = [
+      #     "hyprland/windowcount"
+      #     "hyprland/workspaces#2"
+      #   ];
+      #   "hyprland/windowcount" = {
+      #     format = " W:{}";
+      #   };
+      #   "hyprland/workspaces#2" = {
+      #     active-only = true;
+      #     disable-scroll = false;
+      #     format = "{icon}: {windows}";
+      #     workspace-taskbar = {
+      #       enable = true;
+      #       update-active-window = true;
+      #       format = "{icon} {title:.15}";
+      #     };
+      #     on-click = "activate";
+      #   };
+      #
+      # };
       bottomBar = {
         position = "bottom";
         layer = "top";
@@ -49,8 +49,8 @@
         margin-left = 0;
         margin-right = 0;
         modules-left = [
-          "hyprland/submap"
-          "hyprland/workspaces"
+          # "hyprland/submap"
+          # "hyprland/workspaces"
           "tray"
         ];
         modules-center = [
@@ -77,6 +77,20 @@
           tooltip = "true";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = "  {:%d/%m}";
+        };
+        "niri/workspaces" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            # Named workspaces
+            # (you need to configure them in niri)
+            # "browser" = "";
+            # "discord" = "";
+            # "chat" = "<b></b>";
+
+            # Icons by state
+            "active" = "";
+            "default" = "";
+          };
         };
         "hyprland/workspaces" = {
           active-only = false;
@@ -180,7 +194,7 @@
       };
     in
     {
-      topBar = (common // topBar);
+      # topBar = (common // topBar);
       bottomBar = (common // bottomBar);
     };
 }
