@@ -24,7 +24,7 @@
     direnv
   ];
   wayland.windowManager.hyprland = {
-    enable = true;
+    enable = false;
     package = null;
     portalPackage = null;
 
