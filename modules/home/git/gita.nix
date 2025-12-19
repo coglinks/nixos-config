@@ -1,7 +1,12 @@
-{ pkgs, lib, ... }:
+{
+  pkgs-unstable,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  home.packages = with pkgs; [ gita ];
+  home.packages = with pkgs-unstable; [ gita ];
 
   programs.zsh.completionInit =
     lib.mkOrder 1500
