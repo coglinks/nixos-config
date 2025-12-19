@@ -3,6 +3,7 @@
   system,
   inputs,
   pkgs-custom,
+  pkgs-unstable,
   username,
   host,
   ...
@@ -20,6 +21,7 @@
         inputs
         username
         pkgs-custom
+        pkgs-unstable
         host
         system
         ;

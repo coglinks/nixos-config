@@ -9,6 +9,8 @@
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -104,6 +106,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-unstable,
       custom-nixpkgs,
       self,
       nix-on-droid,
@@ -114,6 +117,10 @@
       username = "incogshift";
       system = "x86_64-linux";
       pkgs-custom = import custom-nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgs-unstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -140,6 +147,7 @@
             host = "laptop";
             inherit
               self
+              pkgs-unstable
               inputs
               pkgs-custom
               username
@@ -161,6 +169,7 @@
             host = "vm";
             inherit
               self
+              pkgs-unstable
               inputs
               pkgs-custom
               username
@@ -182,6 +191,7 @@
           host = "vm";
           inherit
             self
+            pkgs-unstable
             inputs
             pkgs-custom
             username
