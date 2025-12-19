@@ -1,5 +1,5 @@
 {
-  description = "FrostPhoenix's nixos configuration";
+  description = "coglinks' nixos configuration";
 
   inputs = {
     secrets = {
