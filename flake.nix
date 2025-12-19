@@ -3,7 +3,7 @@
 
   inputs = {
     secrets = {
-      url = "path:/secrets";
+      url = "path:/st/remotes/secrets";
       flake = false;
     };
 
