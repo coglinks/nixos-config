@@ -3,7 +3,6 @@
   imports = [
     ./fixes.nix
     ./hardware-configuration.nix
-    ./hardware-configuration-extra.nix
     ./../hardware-configuration-extra.nix
     ./gpu.nix
     ./../../modules/core
