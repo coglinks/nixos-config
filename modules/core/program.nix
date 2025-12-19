@@ -17,7 +17,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    # pinentryFlavor = "";
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
   programs.nix-ld = {
     enable = true;
@@ -27,6 +27,7 @@
   };
   environment.systemPackages = with pkgs; [
     wl-clipboard
+    pinentry-gnome3
     borgbackup
     refind
     _7zz-rar
