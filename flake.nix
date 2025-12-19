@@ -35,9 +35,7 @@
     };
 
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
-    };
-
+      url = "github:nix-community/lanzaboote/v1.0.0";
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
