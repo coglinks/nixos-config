@@ -38,7 +38,7 @@
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/29E7-0445";
+    device = "/dev/disk/by-label/BOOT";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -60,34 +60,10 @@
       options = [ "subvol=st" ];
     };
 
-  fileSystems."/var/lib/nextcloud" =
+  fileSystems."/var/lib" =
     { device = "/dev/mapper/kingston";
       fsType = "btrfs";
-      options = [ "subvol=var/lib/nextcloud" ];
-    };
-
-  fileSystems."/var/lib/sbctl" =
-    { device = "/dev/mapper/kingston";
-      fsType = "btrfs";
-      options = [ "subvol=var/lib/sbctl" ];
-    };
-
-  fileSystems."/var/lib/redis-nextcloud" =
-    { device = "/dev/mapper/kingston";
-      fsType = "btrfs";
-      options = [ "subvol=var/lib/redis-nextcloud" ];
-    };
-
-  fileSystems."/var/lib/gitolite" =
-    { device = "/dev/mapper/kingston";
-      fsType = "btrfs";
-      options = [ "subvol=var/lib/gitolite" ];
-    };
-
-  fileSystems."/var/lib/taskchampion-sync-server" =
-    { device = "/dev/mapper/kingston";
-      fsType = "btrfs";
-      options = [ "subvol=var/lib/taskchampion-sync-server" ];
+      options = [ "subvol=var/lib" ];
     };
 
   boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/d93797fe-adbb-47a2-beeb-5ddc34e1673a";
