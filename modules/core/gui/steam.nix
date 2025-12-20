@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 {
   programs = {
     steam = {
       enable = true;
-
+      package = pkgs-unstable.steam;
       remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = false;
+      dedicatedServer.openFirewall = true;
 
       gamescopeSession.enable = true;
 
@@ -24,7 +24,12 @@
       enable = true;
     };
   };
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-  };
+  # environment = {
+  #   systemPackages = with pkgs; [
+  #     steam-run
+  #   ];
+  #   sessionVariables = {
+  #     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+  #   };
+  # };
 }
