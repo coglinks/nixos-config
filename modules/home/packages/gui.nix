@@ -4,6 +4,7 @@
 
   home.packages = with pkgs; [
     #misc
+    copyq # clipboard manager
     evince # pdf
     firefox
     file-roller # archive
