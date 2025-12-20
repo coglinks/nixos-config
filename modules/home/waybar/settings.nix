@@ -64,7 +64,7 @@
           "pulseaudio"
           "network"
           "battery"
-          "hyprland/language"
+          # "hyprland/language"
           "custom/notification"
         ];
         clock = {
@@ -92,12 +92,12 @@
             "default" = "";
           };
         };
-        "hyprland/workspaces" = {
-          active-only = false;
-          disable-scroll = false;
-          format = "{icon}";
-          on-click = "activate";
-        };
+        # "hyprland/workspaces" = {
+        #   active-only = false;
+        #   disable-scroll = false;
+        #   format = "{icon}";
+        #   on-click = "activate";
+        # };
         cpu = {
           format = "<span foreground='#${colors.base0B}'> </span> {usage}%";
           format-alt = "<span foreground='#${colors.base0B}'> </span> {avg_frequency} GHz";
@@ -167,10 +167,10 @@
             deactivated = " ";
           };
         };
-        "hyprland/language" = {
-          format = "";
-          format-en = "US";
-        };
+        # "hyprland/language" = {
+        #   format = "";
+        #   format-en = "US";
+        # };
         "custom/notification" = {
           tooltip = false;
           format = "{icon} ";
