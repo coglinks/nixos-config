@@ -33,7 +33,6 @@
     hyperfine # benchmarking tool
     libqalculate
     pastel # cli to manipulate colors
-    gita # Git multi repo helper
     swappy # snapshot editing tool
     tdf # cli pdf viewer
     tokei # project line counter
