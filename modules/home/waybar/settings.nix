@@ -51,6 +51,7 @@
         modules-left = [
           # "hyprland/submap"
           # "hyprland/workspaces"
+          "niri/workspaces"
           "tray"
         ];
         modules-center = [
@@ -65,6 +66,7 @@
           "network"
           "battery"
           # "hyprland/language"
+          "niri/language"
           "custom/notification"
         ];
         clock = {
