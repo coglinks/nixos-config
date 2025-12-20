@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./niri.nix
     ./starship.nix
     ./audacious.nix # music player
     ./nushell.nix
