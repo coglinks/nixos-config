@@ -12,5 +12,5 @@
   environment.systemPackages = with pkgs; [ sddm-astronaut ];
 
   # backup DE
-  services.desktopManager.gnome.enable = false;
+  services.desktopManager.gnome.enable = true;
 }
