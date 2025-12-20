@@ -63,5 +63,11 @@
       pkgs.nushell
     ];
   };
-
+  # The following is a workaround that patches an issue created by setting Nushell as the login shell. See: https://wiki.nixos.org/wiki/Nushell
+  programs.bash.interactiveShellInit = # bash
+    ''
+      if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+        exec nu
+      fi
+    '';
 }
