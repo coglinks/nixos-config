@@ -2,8 +2,8 @@
 
 {
   xdg.configFile = {
-    "niri/theme.kdl" = {
-      text = with config.lib.stylix.colors.withHashTag; ''
+    "niri/design/colors.kdl" = {
+      text = with config.lib.stylix.colors.withHashtag; ''
         layout {
           focus-ring {
             // Color of the ring on the active monitor.
@@ -15,6 +15,9 @@
           border {
             active-color "${base0D}"
             inactive-color "${base03}"
+          }
+          shadow {
+            color "${base01}"
           }
         }
       '';
