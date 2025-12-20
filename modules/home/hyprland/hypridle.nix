@@ -2,7 +2,7 @@
 
 {
   services.hypridle = {
-    enable = false;
+    enable = true;
     settings = {
       # Original config submitted by https://github.com/SherLock707, provided by JaKooLit
       general = {
