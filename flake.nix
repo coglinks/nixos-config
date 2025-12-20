@@ -124,6 +124,10 @@
         inherit system;
         config.allowUnfree = true;
       };
+      pkgs-32 = import nixpkgs {
+        system = "i686-linux";
+        config.allowUnfree = true;
+      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -147,6 +151,7 @@
             host = "laptop";
             inherit
               self
+              pkgs-32
               pkgs-unstable
               inputs
               pkgs-custom
