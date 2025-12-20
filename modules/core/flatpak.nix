@@ -5,6 +5,8 @@
   services.flatpak = {
     enable = true;
     packages = [
+      "com.valvesoftware.Steam"
+      "io.itch.itch"
     ];
     overrides = {
       global = {
