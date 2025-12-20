@@ -24,12 +24,13 @@
       enable = true;
     };
   };
-  # environment = {
-  #   systemPackages = with pkgs; [
-  #     steam-run
-  #   ];
-  #   sessionVariables = {
-  #     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
-  #   };
-  # };
+  environment = {
+    systemPackages = with pkgs; [
+      playonlinux
+      steam-run
+    ];
+    sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+    };
+  };
 }
