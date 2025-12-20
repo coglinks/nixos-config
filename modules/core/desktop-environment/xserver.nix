@@ -5,10 +5,12 @@
       enable = true;
       xkb.layout = "us,ara";
     };
-
-    displayManager.autoLogin = {
-      enable = false;
-      user = "${username}";
+    displayManager = {
+      enable = true;
+      autoLogin = {
+        enable = false;
+        user = "${username}";
+      };
     };
     libinput = {
       enable = true;
