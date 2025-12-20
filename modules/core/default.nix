@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./lix.nix
     ./services
     ../secrets
     ./shells
