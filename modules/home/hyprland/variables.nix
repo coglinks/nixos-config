@@ -2,6 +2,7 @@
 {
   home.sessionVariables = {
     NIXOS_OZONE_WL = 1;
+    DISPLAY = ":0";
     __GL_GSYNC_ALLOWED = 0;
     __GL_VRR_ALLOWED = 0;
     _JAVA_AWT_WM_NONEREPARENTING = 1;
@@ -22,9 +23,9 @@
     WLR_BACKEND = "vulkan";
     WLR_RENDERER = "vulkan";
     WLR_NO_HARDWARE_CURSORS = 1;
-    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_CURRENT_DESKTOP = "niri";
     XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "niri";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "Colloid-Green-Dark-Gruvbox";
