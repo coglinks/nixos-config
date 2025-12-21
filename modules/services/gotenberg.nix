@@ -1,11 +1,17 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
-  services.gotenberg = {
-    enable = true;
-    extraFontPackages = with pkgs; [
-      corefonts
-      vista-fonts
-    ];
+  config = lib.mkIf config.services.gotenberg.enable {
+    services.gotenberg = {
+      extraFontPackages = with pkgs; [
+        corefonts
+        vista-fonts
+      ];
+    };
   };
 }
