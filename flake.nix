@@ -151,7 +151,6 @@
               inputs
               pkgs-custom
               username
-              system
               yazi
               ;
           };
@@ -173,7 +172,6 @@
               inputs
               pkgs-custom
               username
-              system
               ;
           };
         };
@@ -195,7 +193,6 @@
             inputs
             pkgs-custom
             username
-            system
             ;
         };
 

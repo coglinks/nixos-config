@@ -1,6 +1,5 @@
 {
   pkgs,
-  system,
   inputs,
   pkgs-custom,
   pkgs-unstable,
@@ -23,7 +22,6 @@
         pkgs-custom
         pkgs-unstable
         host
-        system
         ;
     };
     users.${username} = {
