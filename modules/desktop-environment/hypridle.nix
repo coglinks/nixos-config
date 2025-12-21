@@ -2,7 +2,7 @@
 
 {
   services.hypridle = {
-    enable = true;
+
     settings = {
       # Original config submitted by https://github.com/SherLock707, provided by JaKooLit
       general = {
@@ -12,6 +12,7 @@
         after_sleep_cmd = "hyprctl dispatch dpms on"; # turn of screen after sleep (not strictly necessary, but just in case)
         ignore_dbus_inhibit = false; # whether to ignore dbus-sent idle-inhibit requests (used by e.g. firefox or steam)
       };
+
       listener = [
         {
           # Warn
@@ -34,6 +35,8 @@
           on-timeout = "systemctl hibernate"; # command to run when timeout has passed
         }
       ];
+
     };
+
   };
 }
