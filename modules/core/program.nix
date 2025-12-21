@@ -1,6 +1,5 @@
 {
   options,
-  inputs,
   pkgs,
   pkgs-32,
   ...
@@ -37,6 +36,5 @@
     ueberzugpp
     nushell
     bitwarden-cli
-    inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
   ];
 }

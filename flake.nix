@@ -95,11 +95,6 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    firefox = {
-      url = "github:nix-community/flake-firefox-nightly";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     yazi.url = "github:sxyazi/yazi/nightly";
   };
 
