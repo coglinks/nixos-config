@@ -1,9 +1,14 @@
-{ pkgs, pkgs-unstable, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  pkgs-32,
+  ...
+}:
 {
   programs = {
     steam = {
       enable = true;
-      package = pkgs-unstable.steam;
+      package = pkgs.steam;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
 
