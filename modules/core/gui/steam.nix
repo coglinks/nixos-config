@@ -20,10 +20,10 @@
         "--expose-wayland"
       ];
     };
-    gamemode = {
-      enable = true;
-    };
+
+    gamemode.enable = true;
   };
+
   environment = {
     systemPackages = with pkgs; [
       playonlinux
