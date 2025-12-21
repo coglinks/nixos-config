@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./docker.nix
     ./davfs2.nix
+    ./docker.nix
     ./gitolite.nix
     ./gotenberg.nix
-    ./services.nix
+    ./nextcloud.nix
     ./taskchampion.nix
   ];
 }

@@ -12,11 +12,11 @@
   };
 
   config =
-    (lib.mkIf config.consuetudo.cli {
+    (lib.mkIf config.consuetudo.cli.enable {
     })
     // (lib.mkIf config.consuetudo.services {
       virtualisation.docker.enable = true;
-      consuetudo.programs.gitolite.enable = true;
+      # consuetudo.programs.gitolite.enable = true;
       services = {
         davfs2.enable = false;
         gotenberg.enable = true;
