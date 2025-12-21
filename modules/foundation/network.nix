@@ -25,15 +25,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
-
-  hardware.bluetooth = {
+  services.tailscale = {
     enable = true;
-    settings = {
-      General = {
-        Experimental = true; # Show battery charge of Bluetooth devices
-      };
-    };
+    useRoutingFeatures = "both";
   };
-  services.blueman.enable = true;
 }
