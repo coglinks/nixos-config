@@ -1,6 +1,8 @@
 { lib, config, ... }:
 
 {
+  imports = [ ./foundation ];
+
   options.consuetudo.services = {
     enable = lib.mkEnableOption "Service packages";
   };

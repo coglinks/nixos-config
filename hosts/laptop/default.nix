@@ -5,8 +5,7 @@
     ./hardware-configuration.nix
     ./../hardware-configuration-extra.nix
     ./gpu.nix
-    ./../../modules/core
-    ./../../modules/core/default.laptop.nix
+    ../../modules
   ];
 
   environment.systemPackages = with pkgs; [
