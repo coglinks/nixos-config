@@ -48,26 +48,26 @@
         "kvm"
         "wheel"
       ];
-      shell = pkgs.nushell;
+      shell = pkgs.bash;
     };
   };
   nix.settings.allowed-users = [ "${username}" ];
 
-  users.defaultUserShell = pkgs.nushell;
+  users.defaultUserShell = pkgs.bash;
 
   environment = {
     sessionVariables = {
       EDITOR = "nvim";
     };
     shells = [
-      pkgs.nushell
+      pkgs.bash
     ];
   };
   # The following is a workaround that patches an issue created by setting Nushell as the login shell. See: https://wiki.nixos.org/wiki/Nushell
-  programs.bash.interactiveShellInit = # bash
-    ''
-      if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
-        exec nu
-      fi
-    '';
+  # programs.bash.interactiveShellInit = # bash
+  #   ''
+  #     if ! [ "$TERM" = "dumb" ] && [ -z "$BASH_EXECUTION_STRING" ]; then
+  #       exec nu
+  #     fi
+  #   '';
 }
