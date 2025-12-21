@@ -35,6 +35,7 @@
     _7zz-rar
     fd
     ueberzugpp
+    nushell
     bitwarden-cli
     inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin
   ];
