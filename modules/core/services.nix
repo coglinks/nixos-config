@@ -8,23 +8,29 @@
 {
   services = {
     scanservjs.enable = true;
+
     gvfs.enable = true;
+
     gnome = {
       tinysparql.enable = true;
       gnome-keyring.enable = true;
     };
-    dbus.enable = true;
+
+    dbus = {
+      enable = true;
+      # needed for GNOME services outside of GNOME Desktop
+      packages = with pkgs; [
+        gcr
+        gnome-settings-daemon
+      ];
+    };
     fstrim.enable = true;
 
-    # needed for GNOME services outside of GNOME Desktop
-    dbus.packages = with pkgs; [
-      gcr
-      gnome-settings-daemon
-    ];
     tailscale = {
       enable = true;
       useRoutingFeatures = "both";
     };
+
     nextcloud = {
       enable = true;
       package = pkgs.nextcloud32;
