@@ -7,5 +7,6 @@
     ./display-manager.nix
     ./qt.nix
     ./wayland.nix
+    ./variables.nix
   ];
 }

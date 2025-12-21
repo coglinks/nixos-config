@@ -6,7 +6,6 @@
     ./packages.nix
     ./hyprlock.nix
     ./hypridle.nix
-    ./variables.nix
     ./plugins
     inputs.hyprland.homeManagerModules.default
   ];
