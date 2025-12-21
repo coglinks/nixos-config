@@ -32,6 +32,7 @@
     keychain
     git-annex
     git-crypt
+    git-remote-gcrypt
     gh
   ];
 }
