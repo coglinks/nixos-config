@@ -3,6 +3,7 @@
 {
   services.logind.settings.Login.HandleLidSwitch = "ignore";
   services.displayManager = {
+    gdm.enable = true;
     sddm = {
       enable = false;
       package = pkgs.kdePackages.sddm;
