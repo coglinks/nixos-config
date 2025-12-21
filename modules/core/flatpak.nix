@@ -4,10 +4,7 @@
 
   services.flatpak = {
     enable = true;
-    packages = [
-      "com.valvesoftware.Steam"
-      "io.itch.itch"
-    ];
+    # packages declared in other files
     overrides = {
       global = {
         # Force Wayland by default
