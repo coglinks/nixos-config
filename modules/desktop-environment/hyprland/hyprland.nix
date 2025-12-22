@@ -68,11 +68,11 @@
 
         xdg.configFile = {
           "hypr/scripts" = {
-            source = config.lib.file.mkOutOfStoreSymlink ./hyprland/scripts;
+            source = config.lib.file.mkOutOfStoreSymlink ./scripts;
             recursive = true;
           };
           "hypr/UserScripts" = {
-            source = config.lib.file.mkOutOfStoreSymlink ./hyprland/UserScripts;
+            source = config.lib.file.mkOutOfStoreSymlink ./UserScripts;
             recursive = true;
           };
         };
