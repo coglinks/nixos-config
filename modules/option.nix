@@ -7,9 +7,10 @@
 
 {
   options.consuetudo = {
-    cli = {
-      enable = lib.mkEnableOption "Service packages";
-    };
+    # Not setup yet
+    # cli = {
+    #   enable = lib.mkEnableOption "Service packages";
+    # };
 
     interface = {
       gnome.enable = lib.mkEnableOption "Gnome setup";
@@ -23,9 +24,10 @@
   };
 
   config =
-    (lib.mkIf config.consuetudo.cli.enable {
-    })
-    // (lib.mkIf config.consuetudo.interface.gnome.enable {
+    # Not setup yet
+    # (lib.mkIf config.consuetudo.cli.enable {
+    # }) //
+    (lib.mkIf config.consuetudo.interface.gnome.enable {
       services.displayManager.gdm.enable = true;
       services.desktopManager.gnome.enable = true;
     })

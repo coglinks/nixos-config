@@ -2,6 +2,9 @@
 
 {
   imports = [
+    ./cli
+    ./gui
+    ./secrets
     ./foundation
     ./services
     ./desktop-environment

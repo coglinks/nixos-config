@@ -1,9 +1,27 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  inputs,
+  ...
+}:
 {
   imports = [ inputs.nix-flatpak.nixosModules.nix-flatpak ];
 
+  programs.steam = {
+    enable = true;
+    package = pkgs-unstable;
+  };
+
   environment.systemPackages = with pkgs; [
-    prismlauncher
+    prismlauncher # For minecraft
+    (retroarch.override {
+      cores = with libretro; [
+        fceumm
+        gambatte
+        mgba
+        snes9x
+      ];
+    })
     mangohud
     protonup-ng
     lumafly
