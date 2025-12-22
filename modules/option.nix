@@ -33,10 +33,10 @@
 
       services.displayManager.sddm.enable = true;
       programs.hyprland.enable = true;
+      consuetudo.programs.waylock.enable = true;
 
       home-manager.users.${username} = {
         programs.hyprlock.enable = true;
-        programs.hypridle.enable = true;
       };
 
     })
@@ -44,10 +44,10 @@
 
       services.displayManager.sddm.enable = true;
       programs.niri.enable = true;
+      consuetudo.programs.waylock.enable = true;
 
       home-manager.users.${username} = {
         programs.hyprlock.enable = true;
-        programs.hypridle.enable = true;
       };
 
     })

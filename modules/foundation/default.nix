@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./package-manager
     ./bluetooth.nix
     ./bootloader.nix
     ./hardware.nix

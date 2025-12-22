@@ -20,7 +20,7 @@
     pinentryPackage = pkgs.pinentry-gnome3;
   };
   programs.nix-ld = {
-    enable = true;
+    enable = false;
     libraries = [
       pkgs-32.glibc
       pkgs.glib # libglib-2.0.so.0, libgthread-2.0.so.0
