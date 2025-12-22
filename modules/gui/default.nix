@@ -4,10 +4,9 @@
   imports = [
     ./winapps
     ./cava.nix
-    ./flow.nix
     ./gaming.nix
     ./gtk.nix
-    ./gui.nix
+    ./misc-packages.nix
     ./kitty.nix
     ./nemo.nix
     ./pipewire.nix

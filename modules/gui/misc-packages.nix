@@ -12,6 +12,8 @@
       #misc
       discord
       copyq # clipboard manager
+      thunderbird
+      flow-control
       evince # pdf
       firefox
       file-roller # archive
@@ -69,19 +71,8 @@
     ];
 
     services.flatpak = {
-      enable = true;
       packages = [
       ];
-      overrides = {
-        global = {
-          # Force Wayland by default
-          Context.sockets = [
-            "wayland"
-            "!x11"
-            "!fallback-x11"
-          ];
-        };
-      };
     };
   };
 }
