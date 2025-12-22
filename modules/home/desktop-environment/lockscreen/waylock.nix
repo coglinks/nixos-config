@@ -7,7 +7,7 @@
 with lib;
 {
   options.consuetudo.programs.waylock = {
-    enable = mkEnableOption "the foo program";
+    enable = mkEnableOption "Waylock package";
 
     package = mkOption {
       type = types.package;
