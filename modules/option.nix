@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  username,
+  config,
+  ...
+}:
 
 {
   options.consuetudo = {
@@ -25,20 +30,26 @@
       services.desktopManager.gnome.enable = true;
     })
     // (lib.mkIf config.consuetudo.interface.niri.enable {
+
       services.displayManager.sddm.enable = true;
-      programs = {
-        hyprland.enable = true;
-        hyprlock.enable = true;
-        hypridle.enable = true;
+      programs.hyprland.enable = true;
+
+      home-manager.users.${username} = {
+        programs.hyprlock.enable = true;
+        programs.hypridle.enable = true;
       };
+
     })
     // (lib.mkIf config.consuetudo.interface.hyprland.enable {
+
       services.displayManager.sddm.enable = true;
-      programs = {
-        niri.enable = true;
-        hyprlock.enable = true;
-        hypridle.enable = true;
+      programs.niri.enable = true;
+
+      home-manager.users.${username} = {
+        programs.hyprlock.enable = true;
+        programs.hypridle.enable = true;
       };
+
     })
     // (lib.mkIf config.consuetudo.services.enable {
       virtualisation.docker.enable = true;
