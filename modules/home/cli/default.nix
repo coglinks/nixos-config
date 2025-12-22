@@ -3,14 +3,11 @@
 {
   imports = [
     ./git
-    ./scripts
     ./shell
-    ./superfile
     ./yazi
     ./activitywatch.nix
     ./bat.nix
     ./btop.nix
-    ./default.nix
     ./dev.nix
     ./fastfetch.nix
     ./fzf.nix
