@@ -1,14 +1,24 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
-  programs.hyprland = {
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
+  config = lib.mkIf (config.consuetudo.wm == "hyprland") {
 
-  xdg.portal.config.hyprland.default = [
-    "gtk"
-    "hyprland"
-  ];
+    programs.hyprland = {
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    };
+
+    xdg.portal.config.hyprland.default = [
+      "gtk"
+      "hyprland"
+    ];
+
+  };
 }

@@ -15,7 +15,7 @@
     wm = lib.mkOption {
       type = lib.types.enum [
         "hyprlock"
-        "niri"
+        "niri" # Will enable stylix color config if chosen. Other config is via chezmoi.
       ];
       default = null;
       description = "Which window manager setup to use";
@@ -35,13 +35,8 @@
     # (lib.mkIf config.consuetudo.cli.enable {
     # }) //
     lib.mkMerge [
-      (lib.mkIf (config.consuetudo.wm == "niri") {
-        programs.niri.enable = true;
-        services.displayManager.sddm.enable = true;
-      })
       (lib.mkIf (config.consuetudo.wm == "hyprland") {
-        programs.hyprland.enable = true;
-        services.displayManager.sddm.enable = true;
+        wayland.windowManager.hyprland.enable = true;
       })
 
       (lib.mkIf (config.consuetudo.lock == "hyprlock") {
