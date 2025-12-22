@@ -9,19 +9,20 @@
 
   programs.steam = {
     enable = true;
-    package = pkgs-unstable;
+    package = pkgs-unstable.steam;
   };
 
   environment.systemPackages = with pkgs; [
     prismlauncher # For minecraft
-    (retroarch.override {
-      cores = with libretro; [
-        fceumm
-        gambatte
-        mgba
-        snes9x
-      ];
-    })
+    retroarch
+    # (retroarch.override {
+    #   cores = with libretro; [
+    #     fceumm
+    #     gambatte
+    #     mgba
+    #     snes9x
+    #   ];
+    # })
     mangohud
     protonup-ng
     lumafly
