@@ -20,6 +20,7 @@ in
   programs.tmux = {
     enable = true;
     package = pkgs.tmux;
+    prefix = "C-Space";
     plugins = with pkgs.tmuxPlugins; [
       resurrect
       continuum
