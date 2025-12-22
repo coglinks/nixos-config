@@ -14,13 +14,15 @@
   ];
 
   consuetudo = {
-    interface.niri.enable = true;
+    wm = "niri";
+    lock = "hyprlock";
     services.enable = true;
   };
 
   home-manager.users.${username} = {
     consuetudo = {
-      interface.niri.enable = true;
+      wm = "niri";
+      lock = "hyprlock";
     };
   };
 }

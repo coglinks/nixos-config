@@ -12,9 +12,21 @@
     #   enable = lib.mkEnableOption "Service packages";
     # };
 
-    interface = {
-      niri.enable = lib.mkEnableOption "Niri setup";
-      hyprland.enable = lib.mkEnableOption "Hyprland setup";
+    wm = lib.mkOption {
+      type = lib.types.enum [
+        "hyprlock"
+        "niri"
+      ];
+      default = null;
+      description = "Which window manager setup to use";
+    };
+    lock = lib.mkOption {
+      type = lib.types.enum [
+        "hyprlock"
+        "waylock"
+      ];
+      default = null;
+      description = "Which screenlock to use";
     };
   };
 
@@ -22,20 +34,24 @@
     # Not setup yet
     # (lib.mkIf config.consuetudo.cli.enable {
     # }) //
-    (lib.mkIf config.consuetudo.interface.niri.enable {
-      programs.niri.enable = true;
-      services.hypridle.enable = true;
+    lib.mkMerge [
+      (lib.mkIf (config.consuetudo.wm == "niri") {
+        programs.niri.enable = true;
+        services.displayManager.sddm.enable = true;
+      })
+      (lib.mkIf (config.consuetudo.wm == "hyprland") {
+        programs.hyprland.enable = true;
+        services.displayManager.sddm.enable = true;
+      })
 
-      consuetudo.programs.waylock.enable = true;
-      programs.hyprlock.enable = false;
+      (lib.mkIf (config.consuetudo.lock == "hyprlock") {
+        programs.hyprlock.enable = true;
+        consuetudo.programs.waylock.enable = false;
+      })
 
-    })
-    // (lib.mkIf config.consuetudo.interface.hyprland.enable {
-      wayland.windowManager.hyprland.enable = true;
-      services.hypridle.enable = true;
-
-      consuetudo.programs.waylock.enable = true;
-      programs.hyprlock.enable = false;
-
-    });
+      (lib.mkIf (config.consuetudo.lock == "waylock") {
+        consuetudo.programs.waylock.enable = true;
+        programs.hyprlock.enable = false;
+      })
+    ];
 }

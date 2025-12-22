@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./waylock.nix
     ./hyprlock.nix
+    ./waylock.nix
   ];
 }
