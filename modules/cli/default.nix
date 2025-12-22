@@ -3,11 +3,11 @@
 {
   imports = [
     ./core.btop.nix
-    ./core.activitywatch.nix
   ];
 
   home-manager.users.${username}.imports = [
     ./git
+    ./activitywatch.nix
     ./scripts
     ./shells
     ./superfile
