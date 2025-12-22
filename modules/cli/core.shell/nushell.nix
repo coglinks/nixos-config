@@ -1,7 +1,14 @@
-{ pkgs, pkgs-custom, ... }:
+{
+  username,
+  config,
+  lib,
+  pkgs,
+  pkgs-custom,
+  ...
+}:
 
 {
-  programs.nushell = {
+  home-manager.users.${username}.programs.nushell = {
     enable = true;
     plugins = with pkgs.nushellPlugins; [
       polars
