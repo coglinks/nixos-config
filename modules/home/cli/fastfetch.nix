@@ -6,7 +6,7 @@
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
       "logo": {
-        "source": "${../../.github/assets/logo/nixos-logo.png}",
+        "source": "${pkgs.nixos-icons}logo/nix-snowflake-colours.svg",
         "type": "kitty-direct",
         "width": 33,
         "padding": {

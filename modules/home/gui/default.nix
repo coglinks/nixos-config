@@ -8,7 +8,6 @@
     ./kitty.nix
     ./misc-packages.nix
     ./nemo.nix
-    ./rider.nix
     ./zathura.nix
   ];
 }

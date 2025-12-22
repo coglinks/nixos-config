@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 let
-  taskopen = pkgs.callPackage ../../pkgs/taskopen/default.nix { };
+  taskopen = pkgs.callPackage ../../../pkgs/taskopen/default.nix { };
 in
 {
   sops = {

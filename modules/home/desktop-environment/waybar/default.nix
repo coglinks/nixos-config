@@ -1,6 +1,6 @@
-{ username, ... }:
+{ ... }:
 {
-  home-manager.users.${username}.imports = [
+  imports = [
     ./waybar.nix
     ./settings.nix
     ./style.nix

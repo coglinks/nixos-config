@@ -31,7 +31,7 @@
 
     })
     // (lib.mkIf config.consuetudo.interface.hyprland.enable {
-      programs.hyprland.enable = true;
+      wayland.windowManager.hyprland.enable = true;
       services.hypridle.enable = true;
 
       consuetudo.programs.waylock.enable = true;

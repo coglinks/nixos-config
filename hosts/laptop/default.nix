@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  username,
+  ...
+}:
 {
   imports = [
     ./fixes.nix
@@ -11,5 +16,11 @@
   consuetudo = {
     interface.niri.enable = true;
     services.enable = true;
+  };
+
+  home-manager.users.${username} = {
+    consuetudo = {
+      interface.niri.enable = true;
+    };
   };
 }

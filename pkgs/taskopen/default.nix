@@ -17,8 +17,8 @@ stdenv.mkDerivation {
   src = fetchFromGitHub {
     owner = "jschlatow";
     repo = "taskopen";
-    rev = "f70d75e459164caab7f5d156bbdbdcd85d0c1aea";
-    hash = "sha256-CCPE8px6pR0xqwkfwewmULtxzf3KX1+X12FHmnuQ7qA=";
+    rev = "6767c4b0a087ca7cfe095e581c8f118e5d14975d";
+    hash = "sha256-yDoJPTUIdG3Va41Jf9E7v02WPB0U6isL6tgpvewh0b0=";
   };
 
   # Nim tries to write to ~/.cache/nim → forbidden

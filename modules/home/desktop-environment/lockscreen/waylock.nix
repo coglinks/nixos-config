@@ -18,6 +18,6 @@ with lib;
   };
 
   config = mkIf config.consuetudo.programs.waylock.enable {
-    environment.systemPackages = with pkgs; [ waylock ];
+    home.packages = with pkgs; [ waylock ];
   };
 }
