@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  username,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -14,5 +19,19 @@
     owner = "root";
     group = "root";
     capabilities = "cap_perfmon=+ep cap_dac_read_search=+ep";
+  };
+
+  home-manager.users.${username} = {
+    programs.btop = {
+      enable = true;
+      package = null;
+
+      settings = {
+        # color_theme = "TTY";
+        theme_background = false;
+        update_ms = 500;
+        rounded_corners = false;
+      };
+    };
   };
 }
