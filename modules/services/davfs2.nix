@@ -7,7 +7,7 @@
 }:
 
 {
-  config = lib.mkIf config.services.dav2fs.enable {
+  config = lib.mkIf config.services.davfs2.enable {
     environment.etc."davfs2/secrets" = {
       source = "${inputs.secrets}/passwords/nextcloud/mount";
       mode = "0600";
