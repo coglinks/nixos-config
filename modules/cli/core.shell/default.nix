@@ -6,6 +6,6 @@
   ];
 
   home-manager.users.${username}.imports = [
-    ./starship.nix
+    ./home.starship.nix
   ];
 }

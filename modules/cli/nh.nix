@@ -9,7 +9,7 @@
     flake = "/home/${username}/nixos-config";
   };
 
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     nix-output-monitor
     nvd
   ];

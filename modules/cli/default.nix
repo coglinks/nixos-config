@@ -4,6 +4,7 @@
   imports = [
     ./core.btop.nix
     ./core.shell
+    ./core.openssh.nix
   ];
 
   home-manager.users.${username}.imports = [
@@ -19,7 +20,6 @@
     ./misc.nix
     ./nh.nix
     ./nvim.nix
-    ./openssh.nix
     ./taskwarrior.nix
     ./tmux.nix
     ./zoxide.nix
