@@ -1,18 +1,11 @@
-{ username, ... }:
+{ ... }:
 
 {
   imports = [
     ./variables.nix
-    ./niri.nix
     ./xdg.nix
     ./xserver.nix
-    ./hyprland/hyprland.nix
+    ./window-manager
+    ./lockscreen
   ];
-
-  home-manager.users.${username} = {
-    imports = [
-      ./hypridle.nix
-      ./hyprlock.nix
-    ];
-  };
 }
