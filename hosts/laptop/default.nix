@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ./../hardware-configuration-extra.nix
     ./gpu.nix
-    ../../modules
+    ../../modules/core
   ];
 
   consuetudo = {
