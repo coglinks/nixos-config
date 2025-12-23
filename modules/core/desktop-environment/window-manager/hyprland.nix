@@ -5,7 +5,9 @@
   config,
   ...
 }:
-
+let
+  hyprland-pkgs = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
 {
   config = lib.mkIf (config.consuetudo.wm == "hyprland") {
 
@@ -19,6 +21,10 @@
       "gtk"
       "hyprland"
     ];
+
+    hardware.graphics = {
+      package = hyprland-pkgs.mesa;
+    };
 
   };
 }

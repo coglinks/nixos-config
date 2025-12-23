@@ -8,10 +8,11 @@
   imports = [
     ./fixes.nix
     ./hardware-configuration.nix
-    ./../hardware-configuration-extra.nix
-    ./gpu.nix
     ../../modules/core
   ];
+
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   consuetudo = {
     wm = "niri";

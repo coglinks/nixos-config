@@ -6,6 +6,7 @@
     ./bluetooth.nix
     ./bootloader.nix
     ./hardware.nix
+    ./gpu.nix
     ./lanzaboote.nix
     ./misc.nix
     ./network.nix
