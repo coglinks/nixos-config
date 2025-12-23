@@ -1,8 +1,14 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   config = lib.mkIf (config.consuetudo.wm == "niri") {
 
+    home.packages = with pkgs; [ niri ];
     xdg.configFile."niri/design/colors.kdl" = {
       text = with config.lib.stylix.colors.withHashtag; ''
         overview {
