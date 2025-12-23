@@ -13,22 +13,17 @@
 
   consuetudo = {
     # gpu.name = "hybrid-intel-nvidia";
-
-    wm = {
-      enable = true;
-    };
+    wm.enable = true;
     services.enable = true;
 
   };
 
   home-manager.users.${username} = {
     consuetudo = {
-      wm = {
-        enable = true;
-      };
+      wm.enable = true;
+      programs.niri.enable = true;
     };
 
-    programs.niri.enable = true;
     wayland.windowManager.hyprland.enable = false;
 
   };
@@ -36,5 +31,5 @@
   programs.niri.enable = true;
   programs.hyprland.enable = false;
 
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
 }
