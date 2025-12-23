@@ -6,7 +6,7 @@
   ...
 }:
 {
-  config = lib.mkIf (config.consuetudo.wm == "niri") {
+  config = lib.mkIf config.consuetudo.wm.enable {
     home.packages = with pkgs; [ swayosd ];
 
     wayland.windowManager.hyprland = {

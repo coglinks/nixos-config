@@ -2,8 +2,6 @@
 
 {
   options.consuetudo = {
-    wm = lib.mkOption {
-      enable = lib.mkEnableOption "Additional setup for window managers";
-    };
+    wm.enable = lib.mkEnableOption "Additional setup for window managers";
   };
 }
