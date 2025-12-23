@@ -9,6 +9,7 @@
     ./hypridle.nix
     ./packages.nix
     ./rofi.nix
+    ./option.nix
     ./swayosd.nix
   ];
 }

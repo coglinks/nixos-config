@@ -9,7 +9,7 @@ let
   hyprland-pkgs = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
-  config = lib.mkIf (config.consuetudo.wm == "hyprland") {
+  config = lib.mkIf (config.programs.hyprland.enable) {
 
     programs.hyprland = {
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.default;

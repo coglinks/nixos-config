@@ -13,6 +13,8 @@
       extraPackages = [ pkgs.sddm-astronaut ];
     };
 
-    environment.systemPackages = with pkgs; [ sddm-astronaut ];
+    environment.systemPackages = with pkgs; [
+      sddm-astronaut
+    ];
   };
 }

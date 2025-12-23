@@ -6,7 +6,13 @@
 }:
 
 {
-  config = lib.mkIf (config.consuetudo.wm == "niri") {
+  options = {
+    consuetudo.programs.niri = lib.mkOption {
+      enable = lib.mkEnableOption "Nixified config file for niri";
+    };
+  };
+
+  config = lib.mkIf config.programs.niri.enable {
 
     home.packages = with pkgs; [ niri ];
     xdg.configFile."niri/design/colors.kdl" = {

@@ -11,19 +11,30 @@
     ../../modules/core
   ];
 
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
   consuetudo = {
-    wm = "niri";
-    lock = "hyprlock";
+    # gpu.name = "hybrid-intel-nvidia";
+
+    wm = {
+      enable = true;
+    };
     services.enable = true;
+
   };
 
   home-manager.users.${username} = {
     consuetudo = {
-      wm = "niri";
-      lock = "hyprlock";
+      wm = {
+        enable = true;
+      };
     };
+
+    programs.niri.enable = true;
+    wayland.windowManager.hyprland.enable = false;
+
   };
+
+  programs.niri.enable = true;
+  programs.hyprland.enable = false;
+
+  services.displayManager.sddm.enable = true;
 }
