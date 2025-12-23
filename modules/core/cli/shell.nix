@@ -2,7 +2,10 @@
 
 {
   environment = {
-    systemPackages = [ pkgs.nushell ];
+    systemPackages = with pkgs; [
+      pciutils
+      nushell
+    ];
     pathsToLink = [
       "/share/bash-completion"
     ];
