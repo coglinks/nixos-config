@@ -10,5 +10,6 @@
     ./desktop-environment
     ./display-manager
     ./option.nix
+    ./misc.nix
   ];
 }
